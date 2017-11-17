@@ -77,7 +77,6 @@
       true,
       "check-open-brace",
       "check-catch",
-      "check-else",
       "check-whitespace"
     ],
     "prefer-const": true,
@@ -118,13 +117,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "app",
+      "abe",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "app",
+      "abe",
       "kebab-case"
     ],
     "use-input-property-decorator": true,
