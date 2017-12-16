@@ -6,6 +6,9 @@ import { WorkoutRunnerComponent } from './workout-runner.component';
   imports: [
     CommonModule
   ],
+  exports: [
+    WorkoutRunnerComponent
+  ],
   declarations: [WorkoutRunnerComponent]
 })
 export class WorkoutRunnerModule { }
