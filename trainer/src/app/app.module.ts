@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { WorkoutRunnerModule } from './workout-runner/workout-runner.module';
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    WorkoutRunnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
