@@ -1,2 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import "~bootstrap/dist/css/bootstrap.min.css";
+body {
+  font-size: 13px;
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+}
+
+.image-container {
+  margin: 25px auto;
+  width: 540px;
+  height: 360px;
+  cursor: pointer;
+}
