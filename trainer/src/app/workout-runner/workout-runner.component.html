@@ -1,2 +1,18 @@
-<pre>Current Exercise: {{currentExercise | json}}</pre>
-<pre>Time Left: {{currentExercise.duration-exerciseRunningDuration}}</pre>
+<div class="row">
+    <div id="exercise-pane" class="col-sm-8 col-sm-offset-2">
+      <div class="row workout-content">
+        <div class="workout-display-div">
+          <h1>{{currentExercise.exercise.title}}</h1>
+          <img class="img-responsive" [src]="'/assets/images/' + currentExercise.exercise.image" />
+          <div class="progress time-progress">
+            <div class="progress-bar" role="progressbar"
+                [attr.aria-valuenow]="exerciseRunningDuration" aria-valuemin="0" [attr.aria-valuemax]="currentExercise.duration"
+                [ngStyle]="{'width':(exerciseRunningDuration/currentExercise.duration) * 100 + '%'}">
+            </div>
+          </div>
+          <h1>Time Remaining: {{currentExercise.duration-exerciseRunningDuration}}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  
