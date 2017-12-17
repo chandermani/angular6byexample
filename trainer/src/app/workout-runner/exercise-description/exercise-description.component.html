@@ -1,17 +1,20 @@
 <div>
-  <div class="panel panel-default">
-      <div class="panel-heading">
-          <h3 class="panel-title">Description</h3>
-      </div>
-      <div class="panel-body">
-          {{description}}
-      </div>
+  <div class="card">
+    <h4 class="card-header">
+      Description
+    </h4>
+    <div class="card-body">
+      <div class="card-text">{{description}}</div>
+    </div>
   </div>
-  <div class="panel panel-default">
-      <div class="panel-heading">
-          <h3 class="panel-title">Steps</h3>
+  <br>
+  <div class="card">
+    <h4 class="card-header">
+      Steps
+    </h4>
+    <div class="card-body">
+      <div class="card-text" [innerHTML]="steps">
       </div>
-      <div class="panel-body" [innerHTML]="steps">
-      </div>
+    </div>
   </div>
 </div>
