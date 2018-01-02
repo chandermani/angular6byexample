@@ -6,7 +6,7 @@ import { BSModalContext } from 'ngx-modialog/plugins/bootstrap';
 export class VideoDialogContext extends BSModalContext {
   constructor(public videoId: string) {
     super();
-    this.size = "lg";
+    this.size = "sm";
   }
 }
 

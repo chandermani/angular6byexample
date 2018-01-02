@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, Input } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { Modal } from 'ngx-modialog/plugins/bootstrap';
 import { VideoDialogComponent, VideoDialogContext } from './video-dialog/video-dialog.component';
@@ -12,7 +12,9 @@ import { overlayConfigFactory } from 'ngx-modialog';
 export class VideoPlayerComponent implements OnInit{
 
   @Input() videos: Array<string>;
-
+  @Output() playbackStarted: EventEmitter<any> = new EventEmitter<any>();
+  @Output() playbackEnded: EventEmitter<any> = new EventEmitter<any>();
+  
   constructor(private modal: Modal) { }
 
   ngOnInit() {
@@ -20,5 +22,11 @@ export class VideoPlayerComponent implements OnInit{
 
   playVideo(videoId: string) {
     this.modal.open(VideoDialogComponent, overlayConfigFactory(new VideoDialogContext(videoId)));
+    this.modal.open(VideoDialogComponent, overlayConfigFactory(new VideoDialogContext(videoId)));
+    this.playbackStarted.emit(null);
+    
+    var dialog = this.modal.open(VideoDialogComponent, overlayConfigFactory(new VideoDialogContext(videoId)));
+    dialog.result
+      .then(() => { this.playbackEnded.emit(null); }, (error) => { this.playbackEnded.emit(null); });
   };
 }

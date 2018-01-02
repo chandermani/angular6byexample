@@ -4,7 +4,7 @@
   </div>
   <div class="collapse navbar-collapse"></div>
   <ul class="navbar-nav">
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="showHistoryLink">
       <a class="nav-link" [routerLink]="['history']" title="Workout History">History</a>
     </li>
   </ul>

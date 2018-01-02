@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterEvent } from '@angular/router';
 
 @Component({
   selector: 'abe-header',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  showHistoryLink: boolean = true;
+  private subscription: any;
+  
+  constructor(private router: Router) {
+    this.router.events.subscribe((data: RouterEvent) => {
+      this.showHistoryLink = !this.router.url.startsWith('/workout');
+    });
+  }
 
   ngOnInit() {
   }
+
+  
 
 }
