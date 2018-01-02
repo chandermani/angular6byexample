@@ -1,4 +1,4 @@
-# Guessthenumber
+# Guess the Number
 
 Guess the Number was built using Angular6 and TypeScript
 
