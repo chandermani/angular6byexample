@@ -3,7 +3,9 @@ import { WorkoutPlan, ExercisePlan, Exercise } from './model';
 
 @Component({
   selector: 'abe-workout-runner',
-  templateUrl: './workout-runner.component.html',
+  // templateUrl: './workout-runner.component.html',
+  template: ` <pre>Current Exercise: {{currentExercise | json}}</pre>
+              <pre>Time Left: {{currentExercise.duration-exerciseRunningDuration}}</pre>`,
   styleUrls: ['./workout-runner.component.css'],
 })
 export class WorkoutRunnerComponent implements OnInit {
@@ -15,10 +17,11 @@ export class WorkoutRunnerComponent implements OnInit {
   exerciseRunningDuration: number;
 
   constructor() {
+  }
+
+  ngOnInit() {
     this.workoutPlan = this.buildWorkout();
     this.restExercise = new ExercisePlan(new Exercise('rest', 'Relax!', 'Relax a bit', 'rest.png'), this.workoutPlan.restBetweenExercise);
-  }
-  ngOnInit() {
     this.start();
   }
 
