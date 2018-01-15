@@ -17,10 +17,10 @@ export class WorkoutRunnerComponent implements OnInit {
   workoutPaused: boolean;
 
   constructor() {
-    this.workoutPlan = this.buildWorkout();
-    this.restExercise = new ExercisePlan(new Exercise('rest', 'Relax!', 'Relax a bit', 'rest.png'), this.workoutPlan.restBetweenExercise);
   }
   ngOnInit() {
+    this.workoutPlan = this.buildWorkout();
+    this.restExercise = new ExercisePlan(new Exercise('rest', 'Relax!', 'Relax a bit', 'rest.png'), this.workoutPlan.restBetweenExercise);
     this.start();
   }
 
