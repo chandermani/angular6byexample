@@ -15,10 +15,11 @@ export class WorkoutRunnerComponent implements OnInit {
   exerciseRunningDuration: number;
 
   constructor() {
+  }
+
+  ngOnInit() {
     this.workoutPlan = this.buildWorkout();
     this.restExercise = new ExercisePlan(new Exercise('rest', 'Relax!', 'Relax a bit', 'rest.png'), this.workoutPlan.restBetweenExercise);
-  }
-  ngOnInit() {
     this.start();
   }
 
