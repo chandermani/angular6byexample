@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { WorkoutPlan, ExercisePlan, Exercise } from './model';
 
 @Component({
@@ -7,6 +7,7 @@ import { WorkoutPlan, ExercisePlan, Exercise } from './model';
   template: ` <pre>Current Exercise: {{currentExercise | json}}</pre>
               <pre>Time Left: {{currentExercise.duration-exerciseRunningDuration}}</pre>`,
   styleUrls: ['./workout-runner.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class WorkoutRunnerComponent implements OnInit {
   workoutPlan: WorkoutPlan;
