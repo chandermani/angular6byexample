@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { WorkoutPlan, ExercisePlan, Exercise } from './model';
 
 @Component({
   selector: 'abe-workout-runner',
   templateUrl: './workout-runner.component.html',
   styleUrls: ['./workout-runner.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class WorkoutRunnerComponent implements OnInit {
   workoutPlan: WorkoutPlan;
