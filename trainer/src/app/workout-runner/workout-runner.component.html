@@ -4,7 +4,7 @@
   </div>
   <div id="exercise-pane" class="col-sm-6">
     <div id="pause-overlay" (click)="pauseResumeToggle()" (window:keyup)="onKeyPressed($event)">
-      <span class="glyphicon pause absolute-center" [ngClass]="{'glyphicon-pause' : !workoutPaused, 'glyphicon-play' : workoutPaused}"></span>
+      <span class="pause absolute-center" [ngClass]="{'ion-md-pause' : !workoutPaused, 'ion-md-play' : workoutPaused}"></span>
     </div>
     <h4 class="text-center">Workout Remaining - {{workoutTimeRemaining | secondsToTime}}</h4>
     <h1 class="text-center">{{currentExercise.exercise.title}}</h1>
