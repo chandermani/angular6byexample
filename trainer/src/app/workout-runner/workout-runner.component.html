@@ -12,7 +12,7 @@
       <img class="img-fluid col-sm" [src]="'/assets/images/' + currentExercise.exercise.image" />
     </div>
     <div class="progress time-progress row">
-      <div class="progress-bar col-sm" role="progressbar" [attr.aria-valuenow]="exerciseRunningDuration" aria-valuemin="0" [attr.aria-valuemax]="currentExercise.duration"
+      <div class="progress-bar" role="progressbar" [attr.aria-valuenow]="exerciseRunningDuration" aria-valuemin="0" [attr.aria-valuemax]="currentExercise.duration"
         [ngStyle]="{'width':(exerciseRunningDuration/currentExercise.duration) * 100 + '%'}">
       </div>
     </div>
