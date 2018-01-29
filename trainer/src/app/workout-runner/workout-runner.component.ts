@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { WorkoutPlan, ExercisePlan, Exercise } from './model';
 import { Router } from '@angular/router';
 import { WorkoutHistoryTrackerService } from '../core/workout-history-tracker.service';
@@ -7,6 +7,7 @@ import { WorkoutHistoryTrackerService } from '../core/workout-history-tracker.se
   selector: 'abe-workout-runner',
   templateUrl: './workout-runner.component.html',
   styleUrls: ['./workout-runner.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class WorkoutRunnerComponent implements OnInit, OnDestroy {
   workoutPlan: WorkoutPlan;
@@ -20,8 +21,6 @@ export class WorkoutRunnerComponent implements OnInit, OnDestroy {
 
   constructor(private router: Router,
     private tracker: WorkoutHistoryTrackerService) {
-    this.workoutPlan = this.buildWorkout();
-    this.restExercise = new ExercisePlan(new Exercise('rest', 'Relax!', 'Relax a bit', 'rest.png'), this.workoutPlan.restBetweenExercise);
   }
 
   ngOnDestroy() {
@@ -29,6 +28,8 @@ export class WorkoutRunnerComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.workoutPlan = this.buildWorkout();
+    this.restExercise = new ExercisePlan(new Exercise('rest', 'Relax!', 'Relax a bit', 'rest.png'), this.workoutPlan.restBetweenExercise);
     this.start();
   }
 
@@ -145,7 +146,7 @@ export class WorkoutRunnerComponent implements OnInit, OnDestroy {
           'pushUp',
           'Push up',
           'A push-up is a common exercise performed in a prone position by raising and lowering the body using the arms',
-          'pushup.png',
+          'Pushup.png',
           'pushups.wav',
           `Lie prone on the ground with hands placed as wide or slightly wider than shoulder width.
           Keeping the body straight, lower body to the ground by bending arms at the elbows.
@@ -176,7 +177,7 @@ export class WorkoutRunnerComponent implements OnInit, OnDestroy {
           'stepUpOntoChair',
           'Step Up Onto Chair',
           'Step exercises are ideal for building muscle in your lower body.',
-          'stepupontochair.png',
+          'stepUpOntoChair.png',
           'stepup.wav',
           `Position your chair in front of you.
           Stand with your feet about hip width apart, arms at your sides.
@@ -266,7 +267,7 @@ export class WorkoutRunnerComponent implements OnInit, OnDestroy {
           'pushupNRotate',
           'Pushup And Rotate',
           'A variation of pushup that requires you to rotate.',
-          'pushupnrotate.png',
+          'pushupNRotate.png',
           'pushupandrotate.wav',
           `Assume the classic pushup position, but as you come up, rotate your body so your right arm lifts up and extends overhead.
           Return to the starting position, lower yourself, then push up and rotate till your left hand points toward the ceiling.`,
