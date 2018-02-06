@@ -5,12 +5,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class OrderByPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
+  transform(value: Array<any>, field: string): any {
     if (value == null || value.length <= 1) {
       return value;
     }
-    let field: string = args[0];
-    if (field.startsWith("-")) {
+    if (field.startsWith('-')) {
       field = field.substring(1);
       if (typeof value[0][field] === 'string' || value[0][field] instanceof String) {
         return [...value].sort((a, b) => b[field].localeCompare(a[field]));
