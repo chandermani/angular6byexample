@@ -7,6 +7,7 @@ import { SearchPipe } from './search.pipe';
   imports: [
     CommonModule
   ],
-  declarations: [OrderByPipe, SearchPipe]
+  declarations: [OrderByPipe, SearchPipe],
+  exports: [OrderByPipe, SearchPipe]
 })
 export class SharedModule { }
