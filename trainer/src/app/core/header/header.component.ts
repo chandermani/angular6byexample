@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterEvent } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import 'rxjs/add/operator/filter';
+
 
 @Component({
   selector: 'abe-header',
@@ -8,13 +10,13 @@ import { Router, RouterEvent } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  showHistoryLink: boolean = true;
-  private subscription: any;
-  
+  private showHistoryLink = true;
   constructor(private router: Router) {
-    this.router.events.subscribe((data: RouterEvent) => {
-      this.showHistoryLink = !this.router.url.startsWith('/workout');
-    });
+    this.router.events
+      .filter(e => e instanceof NavigationEnd)
+      .subscribe((e: NavigationEnd) => {
+        this.showHistoryLink = !e.url.startsWith('/workout');
+      });
   }
 
   ngOnInit() {
