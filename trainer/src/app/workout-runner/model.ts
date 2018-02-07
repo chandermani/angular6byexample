@@ -33,18 +33,3 @@ export class Exercise {
         public procedure?: string,
         public videos?: Array<string>) { }
 }
-
-export class ExerciseProgressEvent {
-    constructor(
-      public exercise: ExercisePlan,
-      public runningFor: number,
-      public timeRemaining: number,
-      public workoutTimeRemaining: number) { }
-  }
-  
-  export class ExerciseChangedEvent {
-    constructor(
-      public current: ExercisePlan,
-      public next: ExercisePlan
-      ) { }
-  }

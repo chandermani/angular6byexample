@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OrderByPipe } from './order-by.pipe';
 import { SearchPipe } from './search.pipe';
-import { MyAudioDirective } from './my-audio.directive';
 
 @NgModule({
   imports: [
@@ -10,13 +9,11 @@ import { MyAudioDirective } from './my-audio.directive';
   ],
   declarations: [
     OrderByPipe,
-    SearchPipe,
-    MyAudioDirective
+    SearchPipe
   ],
   exports: [
     OrderByPipe,
-    SearchPipe,
-    MyAudioDirective
+    SearchPipe
   ]
 })
 export class SharedModule { }

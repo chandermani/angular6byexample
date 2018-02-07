@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
-import { WorkoutPlan, ExercisePlan, Exercise, ExerciseProgressEvent, ExerciseChangedEvent } from './model';
+import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
+import { WorkoutPlan, ExercisePlan, Exercise } from './model';
 import { Router } from '@angular/router';
 import { WorkoutHistoryTrackerService } from '../core/workout-history-tracker.service';
 
@@ -19,20 +19,12 @@ export class WorkoutRunnerComponent implements OnInit, OnDestroy {
   exerciseTrackingInterval: number;
   workoutPaused: boolean;
 
-  @Output() exercisePaused: EventEmitter<number> = new EventEmitter<number>();
-  @Output() exerciseResumed: EventEmitter<number> = new EventEmitter<number>();
-  @Output() exerciseProgress: EventEmitter<ExerciseProgressEvent> = new EventEmitter<any>();
-  @Output() exerciseChanged: EventEmitter<ExerciseChangedEvent> = new EventEmitter<any>();
-  @Output() workoutStarted: EventEmitter<WorkoutPlan> = new EventEmitter<WorkoutPlan>();
-  @Output() workoutComplete: EventEmitter<WorkoutPlan> = new EventEmitter<WorkoutPlan>();
-
   constructor(private router: Router,
     private tracker: WorkoutHistoryTrackerService) {
   }
 
   ngOnDestroy() {
     this.tracker.endTracking(false);
-    if (this.exerciseTrackingInterval) clearInterval(this.exerciseTrackingInterval);
   }
 
   ngOnInit() {
@@ -46,19 +38,16 @@ export class WorkoutRunnerComponent implements OnInit, OnDestroy {
     this.workoutTimeRemaining = this.workoutPlan.totalWorkoutDuration();
     this.currentExerciseIndex = 0;
     this.startExercise(this.workoutPlan.exercises[this.currentExerciseIndex]);
-    this.workoutStarted.emit(this.workoutPlan);
   }
 
   pause() {
     clearInterval(this.exerciseTrackingInterval);
     this.workoutPaused = true;
-    this.exercisePaused.emit(this.currentExerciseIndex);
   }
 
   resume() {
     this.startExerciseTimeTracking();
     this.workoutPaused = false;
-    this.exerciseResumed.emit(this.currentExerciseIndex);
   }
 
   pauseResumeToggle() {
@@ -95,23 +84,15 @@ export class WorkoutRunnerComponent implements OnInit, OnDestroy {
             this.currentExerciseIndex++;
           }
           this.startExercise(next);
-          this.exerciseChanged.emit(new ExerciseChangedEvent(next, this.getNextExercise()));
         }
         else {
           this.tracker.endTracking(true);
-          this.workoutComplete.emit(this.workoutPlan);
           this.router.navigate(['/finish']);
         }
         return;
       }
       ++this.exerciseRunningDuration;
       --this.workoutTimeRemaining;
-      this.exerciseProgress.emit(new ExerciseProgressEvent(
-        this.currentExercise,
-        this.exerciseRunningDuration,
-        this.currentExercise.duration - this.exerciseRunningDuration,
-        this.workoutTimeRemaining
-      ));
     }, 1000);
   }
 
