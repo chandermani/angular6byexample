@@ -41,8 +41,8 @@ export class ExerciseProgressEvent {
       public timeRemaining: number,
       public workoutTimeRemaining: number) { }
   }
-  
-  export class ExerciseChangedEvent {
+
+export class ExerciseChangedEvent {
     constructor(
       public current: ExercisePlan,
       public next: ExercisePlan

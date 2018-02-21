@@ -1,4 +1,4 @@
-import { ExercisePlan } from '../workout-runner/model';
+import { ExercisePlan } from './model';
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from './local-storage.service';
 
