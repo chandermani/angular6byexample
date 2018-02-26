@@ -46,25 +46,6 @@ input[type="checkbox"].input-validation-error {
 }
 /* styles for validation helpers - end */
 
-/*styles for top nav bar - start*/
-.navbar-default.top-navbar {
-    background-color: #4eaded;
-    border-color: #4eaded;
-}
-.navbar-default .second-top-nav{
-    background-color: #0088dc !important;
-    height:43px;
-}
-    .navbar-default .second-top-nav a {
-        color: white !important;
-    }
-.navbar-default.top-navbar h1 {
-    color: white;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-/*styles for top nav bar - end*/
-
 /*styles for left nav bar - start*/
 .left-nav-bar {
     background-color: #1ba2db;

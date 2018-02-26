@@ -6,11 +6,24 @@ import { ExerciseComponent } from './exercise/exercise.component';
 import { ExercisesComponent } from './exercises/exercises.component';
 import { WorkoutComponent } from './workout/workout.component';
 import { WorkoutsComponent } from './workouts/workouts.component';
+import { WorkoutBuilderRoutingModule } from './workout-builder-routing.module';
+import { LeftNavExercisesComponent } from './navigation/left-nav-exercises.component';
+import { LeftNavMainComponent } from './navigation/left-nav-main.component';
+import { SubNavMainComponent } from './navigation/sub-nav-main.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    WorkoutBuilderRoutingModule
   ],
-  declarations: [WorkoutBuilderComponent, ExerciseComponent, ExercisesComponent, WorkoutComponent, WorkoutsComponent]
+  declarations: [
+    WorkoutBuilderComponent,
+    ExerciseComponent,
+    ExercisesComponent,
+    WorkoutComponent,
+    WorkoutsComponent,
+    LeftNavExercisesComponent,
+    LeftNavMainComponent,
+    SubNavMainComponent]
 })
 export class WorkoutBuilderModule { }
