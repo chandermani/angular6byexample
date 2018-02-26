@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'abe-workout-builder',
   template: `<div class="container-fluid fixed-top mt-5">
                 <div class="row mt-5">
                   <abe-sub-nav-main></abe-sub-nav-main>
