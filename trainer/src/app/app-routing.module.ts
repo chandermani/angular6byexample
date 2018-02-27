@@ -10,6 +10,7 @@ const routes: Routes = [
     { path: 'workout', component: WorkoutContainerComponent },
     { path: 'finish', component: FinishComponent },
     { path: 'history', component: WorkoutHistoryComponent },
+    { path: 'builder', loadChildren: './workout-builder/workout-builder.module#WorkoutBuilderModule'},
     { path: '**', redirectTo: '/start' }
 ];
 
