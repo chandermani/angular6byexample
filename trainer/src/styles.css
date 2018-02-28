@@ -74,6 +74,11 @@ body {
 }
 /*styles for container - end*/
 
+.builder-content-pane{
+  padding-right: 40px;
+  padding-left: 290px; /* 250 + 40 */
+}
+
 /*styles for top nav bar - start*/
 .top-navbar {
   background-color: #4eaded;
