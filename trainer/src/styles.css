@@ -66,3 +66,151 @@ body {
   bottom: 0;
   right: 0;
 }
+
+/*styles for container - start*/
+.container.app-container{
+  width:100%;
+  max-width:100%;
+}
+/*styles for container - end*/
+
+/*styles for top nav bar - start*/
+.top-navbar {
+  background-color: #4eaded;
+  border-color: #4eaded;
+}
+.second-top-nav{
+  background-color: #0088dc !important;
+  color: white;
+  height:43px;
+  position:fixed !important;
+  top:70px !important;
+}
+.second-top-nav div{
+  position:fixed;
+  top:81px;
+}
+  .second-top-nav a {
+      color: white !important;
+  }
+
+.top-navbar h1 {
+  color: white;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+/*styles for top nav bar - end*/
+
+/*styles for left nav bar - start*/
+.left-nav-bar {
+  background-color: #1ba2db;
+  min-height: 100%;
+  position: fixed;
+  margin-top: -14px;
+  margin-left:-15px;
+  width:250px !important
+}
+.left-nav-bar a{
+  color:white;
+  margin-top: 5px;
+  font-weight:900;
+  text-align:center;
+  background-color: #9d4a9c;
+  width:100%;
+}
+/*styles for left nav bar - end*/
+
+/*Workout Builder Styles*/
+#left-nav-exercises button {
+  margin-bottom:4px;
+}
+#left-nav-exercises button .glyphicon {
+  margin-left:6px;
+}
+.exercise-item.ng-enter,
+.exercise-item.ng-move {
+  -webkit-animation: zoomIn 0.5s;
+  -moz-animation: zoomIn 0.5s;
+  -ms-animation: zoomIn 0.5s;
+  animation: zoomIn 0.5s;
+}
+.exercise-item.ng-leave {
+  -webkit-animation: fadeOut 0.25s;
+  -moz-animation: fadeOut 0.25s;
+  -ms-animation: fadeOut 0.25s;
+  animation: fadeOut 0.25s;
+}
+/*Workout Builder Styles - end*/
+
+/*styles for tile - start*/
+.exercise.tile {
+  width:320px;
+  height:226px;
+  color:white;
+  margin-bottom:10px;
+  background:#61b9ff;
+
+}
+
+.exercise.tile .title {
+  width:inherit;
+  background:#9d4a9c;
+  font-size:14pt;
+  padding:5px;
+}
+.exercise.tile .index{
+  width:40px;
+  float:left;
+  font-size:20pt;
+  text-align:center;
+  padding-top:10px;
+}
+.exercise.tile .order{
+  width:53px;
+  float:right;
+}
+.exercise.tile .main {
+  width:225px;
+  float:left;
+  padding:4px;
+}
+.exercise.tile img{
+  width:100%;
+  height:120px;
+}
+
+.workout.tile {
+  width: 300px;
+  height: 80px;
+  background: #5bc0de;
+  color: white;
+  padding:10px;
+  margin-bottom:10px;
+}
+.workout.tile:hover{
+  background:#1D89CF;
+}
+
+.workout .title{
+  font-size: 20pt;
+  text-align: center;
+}
+.workout .stats{
+  font-size: 12pt;
+  padding:0 10px 0 10px;
+}
+
+.exercise-tile {
+  width: 300px;
+  height: 50px;
+  background: #5bc0de;
+  color: white;
+  padding:5px;
+  margin-bottom:10px;
+  font-size: 18pt;
+  text-align: center;
+}
+.exercise-tile:hover {
+  background:#1D89CF;
+}
+/*styles for tile- end*/
