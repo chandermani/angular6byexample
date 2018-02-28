@@ -112,11 +112,12 @@ body {
 }
 .left-nav-bar a{
   color:white;
-  margin-top: 5px;
+  margin-left:25px;
+  margin-top:5px;
   font-weight:900;
   text-align:center;
   background-color: #9d4a9c;
-  width:100%;
+  width:200px;
 }
 /*styles for left nav bar - end*/
 
