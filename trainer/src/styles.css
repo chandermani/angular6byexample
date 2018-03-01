@@ -72,11 +72,10 @@ body {
   width:100%;
   max-width:100%;
 }
-/*styles for container - end*/
+/*styles for builder content - end*/
 
-.builder-content-pane{
-  padding-right: 40px;
-  padding-left: 290px; /* 250 + 40 */
+.builder-content {
+  margin-left: 220px;
 }
 
 /*styles for top nav bar - start*/
@@ -113,17 +112,21 @@ body {
   position: fixed;
   margin-top: -14px;
   margin-left:-15px;
+  padding-top: 20px;
+  text-align: center;
   width:250px !important
 }
 .left-nav-bar a{
   color:white;
-  margin-left:25px;
-  margin-top:5px;
+  margin-left:31px;
+  margin-bottom: 5px;
   font-weight:900;
   text-align:center;
   background-color: #9d4a9c;
   width:200px;
 }
+
+
 /*styles for left nav bar - end*/
 
 /*Workout Builder Styles*/
