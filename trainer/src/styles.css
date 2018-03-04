@@ -67,11 +67,6 @@ body {
   right: 0;
 }
 
-/*styles for container - start*/
-.container.app-container{
-  width:100%;
-  max-width:100%;
-}
 /*styles for builder content - end*/
 
 .builder-content {
