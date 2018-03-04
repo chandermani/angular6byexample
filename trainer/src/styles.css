@@ -67,11 +67,11 @@ body {
   right: 0;
 }
 
-/*styles for builder content - end*/
-
+/*styles for builder content - start*/
 .builder-content {
   margin-left: 325px;
 }
+/*styles for builder content - end*
 
 /*styles for top nav bar - start*/
 .top-navbar {
