@@ -4,5 +4,8 @@
     </div>
     <div class="col-sm-10 builder-content">
         <h1 class="text-center">Exercises</h1>
+        <div *ngFor="let exercise of exerciseList|orderBy:'title'" class="exercise-tile" (click)="onSelect(exercise)">
+          <div class="title">{{exercise.title}}</div>
+      </div>
     </div>
   </div>

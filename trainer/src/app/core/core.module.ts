@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 import { ModalModule } from 'ngx-modialog';
 import { BootstrapModalModule } from 'ngx-modialog/plugins/bootstrap';
+import { WorkoutService } from './workout.service';
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { BootstrapModalModule } from 'ngx-modialog/plugins/bootstrap';
     BootstrapModalModule
   ],
   declarations: [HeaderComponent],
-  providers: [WorkoutHistoryTrackerService, LocalStorageService],
+  providers: [WorkoutHistoryTrackerService, LocalStorageService, WorkoutService],
   exports: [HeaderComponent]
 })
 export class CoreModule { }

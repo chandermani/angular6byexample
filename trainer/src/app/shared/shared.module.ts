@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { OrderByPipe } from './order-by.pipe';
 import { SearchPipe } from './search.pipe';
 import { MyAudioDirective } from './my-audio.directive';
+import { SecondsToTimePipe } from './seconds-to-time.pipe';
 
 @NgModule({
   imports: [
@@ -10,11 +11,13 @@ import { MyAudioDirective } from './my-audio.directive';
   ],
   declarations: [
     OrderByPipe,
+    SecondsToTimePipe,
     SearchPipe,
     MyAudioDirective
   ],
   exports: [
     OrderByPipe,
+    SecondsToTimePipe,
     SearchPipe,
     MyAudioDirective
   ]
