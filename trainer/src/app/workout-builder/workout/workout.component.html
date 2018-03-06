@@ -3,6 +3,69 @@
         <abe-left-nav-exercises></abe-left-nav-exercises>
     </div>
     <div class="col-sm-10 builder-content">
-        <h1 class="text-center">Workout</h1>
+      <div id="workout-container" class="workout-container">
+        <div class="row">
+            <h2 class="col-sm-9">{{workout.title||'Workout Title'}} </h2>
+         </div>
+         <form #f="ngForm" name="formWorkout" (ngSubmit)="save(f.form)" class="row" novalidate>
+             <div id="exercises-list" class="col-sm-2 exercise-list">
+                 <div *ngFor="let exercisePlan of workout.exercises; let i=index" class="exercise-item">
+                     <div class="exercise tile">
+                         <div class="title">
+                             {{exercisePlan.exercise.title}}
+                             <span class="btn float-right trashcan" (click)="removeExercise(exercisePlan)"><span class="ion-ios-trash-outline"></span></span>
+                         </div>
+                         <div class="index"><span>{{i +1}}</span></div>
+                         <div class="main">
+                             <div class="image">
+                                 <img [src]="exercisePlan.exercise.image? '/assets/images/' + exercisePlan.exercise.image: '/static/images/' + 'running.png'" />
+                             </div>
+                             <div class="details">
+                                 <select class="select-duration form-control" name="duration" [(ngModel)]="exercisePlan.duration">
+                                     <option *ngFor="let duration of durations" [value]="duration.value">{{duration.title}}</option>
+                                 </select>
+                             </div>
+                         </div>
+                         <div class="order">
+                             <button type="button" class="btn btn-info tile-outside-button" (click)="moveExerciseTo(exercisePlan,0)"><span class="ion-ios-arrow-dropup-outline"></span></button>
+                             <button type="button" class="btn btn-info tile-inside-button" (click)="moveExerciseTo(exercisePlan,i-1)"><span class="ion-ios-arrow-up"></span></button>
+                             <button type="button" class="btn btn-info tile-inside-button" (click)="moveExerciseTo(exercisePlan,i+1)"><span class="ion-ios-arrow-down"></span></button>
+                             <button type="button" class="btn btn-info tile-outside-button" (click)="moveExerciseTo(exercisePlan,workout.exercises.length-1)"><span class="ion-ios-arrow-dropdown-outline"></span></button>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div id="workout-data" class="col-sm-3 workout-data">
+                 <div class="form-group row">
+                     <label for="workout-name">Name:</label>
+                     <input type="text" name="workoutName" class="form-control" id="workout-name" placeholder="Enter workout name. Must be unique." [(ngModel)]="workout.name">{{workout.name}}
+                 </div>
+                 <div class="form-group row">
+                     <label for="workout-title">Title:</label>
+                     <input type="text" name="title" class="form-control" id="workout-title" placeholder="What would be the workout title?" [(ngModel)]="workout.title">
+                 </div>
+                 <div class="form-group row">
+                     <label for="workout-description">Description:</label>
+                     <textarea name="description" class="form-control" id="workout-description" placeholder="Enter workout description." [(ngModel)]="workout.description"></textarea>
+                 </div>
+                 <div class="form-group row">
+                     <label for="workout-rest">Rest Time (in seconds):</label>
+                     <input type="number" name="restBetweenExercise" class="form-control" id="workout-rest" placeholder="Rest period between exercise in seconds." [(ngModel)]="workout.restBetweenExercise">
+                 </div>
+                 <div class="form-group row">
+                     <label>Total Exercises:</label>
+                     <p class="label label-primary label-as-badge">{{workout.exercises?.length}}</p>
+                 </div>
+                 <div class="form-group row">
+                     <label>Total Duration:</label>
+                     <p class="label label-primary label-as-badge" *ngIf="workout.exercises?.length>0">{{workout.totalWorkoutDuration()|secondsToTime}}</p>
+                     <p class="label label-primary label-as-badge" *ngIf="workout.exercises?.length==0"></p>
+                 </div>
+                 <div class="row">
+                     <button type="submit" class="btn btn-warning">Save</button>
+                 </div>
+             </div>
+         </form>
+     </div>
     </div>
   </div>

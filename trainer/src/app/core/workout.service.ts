@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
-import {ExercisePlan} from './model';
-import {WorkoutPlan} from './model';
-import {Exercise} from './model';
+
+import {Exercise, ExercisePlan, WorkoutPlan } from './model';
 
 @Injectable()
 export class WorkoutService {
@@ -20,6 +19,13 @@ export class WorkoutService {
     getWorkouts() {
         return this.workouts;
     }
+
+    getWorkout(name: string) {
+      for (const workout of this.workouts) {
+          if (workout.name === name) { return workout; }
+      }
+      return null;
+  }
 
     setupInitialExercises() {
         this.exercises.push(
@@ -55,7 +61,7 @@ export class WorkoutService {
                  'pushUp',
                  'Push up',
                  'A push-up is a common exercise performed in a prone position by raising and lowering the body using the arms',
-                 'pushup.png',
+                 'Pushup.png',
                  'pushups.wav',
                  `Lie prone on the ground with hands placed as wide or slightly wider than shoulder width.
                  Keeping the body straight, lower body to the ground by bending arms at the elbows.
@@ -84,7 +90,7 @@ export class WorkoutService {
                  'stepUpOntoChair',
                  'Step Up Onto Chair',
                  'Step exercises are ideal for building muscle in your lower body.',
-                 'stepupontochair.png',
+                 'stepUpOntoChair.png',
                  'stepup.wav',
                  `Position your chair in front of you.
                  Stand with your feet about hip width apart, arms at your sides.
@@ -169,7 +175,7 @@ export class WorkoutService {
                  'pushupNRotate',
                  'Pushup And Rotate',
                  'A variation of pushup that requires you to rotate.',
-                 'pushupnrotate.png',
+                 'pushupNRotate.png',
                  'pushupandrotate.wav',
                  `Assume the classic pushup position, but as you come up, rotate your body so your right arm lifts up and extends overhead.
                  Return to the starting position, lower yourself, then push up and rotate till your left hand points toward the ceiling.`,
@@ -192,68 +198,11 @@ export class WorkoutService {
      }
 
     setupInitialWorkouts() {
-        const exercises = this.getExercises();
-        const workout = new WorkoutPlan('7MinWorkout', '7 Minute Workout', 10, []);
-        workout.exercises.push(
-            new ExercisePlan(
-                exercises[0],
-                30)
-        );
-        workout.exercises.push(
-            new ExercisePlan(
-                exercises[1],
-                30)
-        );
-        workout.exercises.push(
-            new ExercisePlan(
-                exercises[2],
-                30)
-        );
-        workout.exercises.push(
-            new ExercisePlan(
-                exercises[3],
-                30)
-        );
-        workout.exercises.push(
-            new ExercisePlan(
-                exercises[4],
-                30)
-        );
-        workout.exercises.push(
-            new ExercisePlan(
-                exercises[5],
-                30)
-        );
-        workout.exercises.push(
-            new ExercisePlan(
-                exercises[6],
-                30)
-        );
-        workout.exercises.push(
-            new ExercisePlan(
-                exercises[7],
-                30)
-        );
-        workout.exercises.push(
-            new ExercisePlan(
-                exercises[8],
-                30)
-        );
-        workout.exercises.push(
-            new ExercisePlan(
-                exercises[9],
-                30)
-        );
-        workout.exercises.push(
-            new ExercisePlan(
-                exercises[10],
-                30)
-        );
-        workout.exercises.push(
-            new ExercisePlan(
-                exercises[11],
-                30)
-        );
-        this.workouts.push(workout);
-    }
+      const exercises = this.getExercises();
+      const workout = new WorkoutPlan('7MinWorkout', '7 Minute Workout', 10, []);
+      for (const exercise of this.exercises) {
+          workout.exercises.push(new ExercisePlan(exercise, 30));
+      }
+      this.workouts.push(workout);
+  }
 }

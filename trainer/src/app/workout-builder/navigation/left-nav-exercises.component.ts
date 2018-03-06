@@ -1,22 +1,25 @@
 import {Component, OnInit} from '@angular/core';
 
 import { WorkoutService } from '../../core/workout.service';
-import { Exercise } from '../../core/model';
+import { Exercise, ExercisePlan } from '../../core/model';
+import { WorkoutBuilderService } from '../workout-builder.service';
 
 @Component({
     selector: 'abe-left-nav-exercises',
     templateUrl: './left-nav-exercises.component.html'
 })
 export class LeftNavExercisesComponent implements OnInit {
-    public exerciseList: Array<Exercise> = [];
+    exerciseList: Array<Exercise> = [];
 
-    constructor(private workoutService: WorkoutService) {}
+    constructor(
+      public workoutService: WorkoutService,
+      public workoutBuilderService: WorkoutBuilderService) {}
 
     ngOnInit() {
         this.exerciseList = this.workoutService.getExercises();
     }
 
     addExercise(exercise: Exercise) {
-        // Implementation here
+      this.workoutBuilderService.addExercise(new ExercisePlan(exercise, 30));
     }
 }
