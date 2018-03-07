@@ -54,12 +54,12 @@
                  </div>
                  <div class="form-group row">
                      <label>Total Exercises:</label>
-                     <p class="label label-primary label-as-badge">{{workout.exercises?.length}}</p>
+                     <p class="badge badge-pill badge-primary">{{workout.exercises?.length}}</p>
                  </div>
                  <div class="form-group row">
                      <label>Total Duration:</label>
-                     <p class="label label-primary label-as-badge" *ngIf="workout.exercises?.length>0">{{workout.totalWorkoutDuration()|secondsToTime}}</p>
-                     <p class="label label-primary label-as-badge" *ngIf="workout.exercises?.length==0"></p>
+                     <p class="badge badge-pill badge-primary" *ngIf="workout.exercises?.length>0">{{workout.totalWorkoutDuration()|secondsToTime}}</p>
+                     <p class="badge badge-pill badge-primary" *ngIf="workout.exercises?.length==0"></p>
                  </div>
                  <div class="row">
                      <button type="submit" class="btn btn-warning">Save</button>

@@ -148,6 +148,8 @@ body {
   background-color:#995466;
   color:white;
   text-align:center;
+  width:275px;
+  max-width: 275px;
 }
 
 .left-nav-exercises-bar button:hover{
@@ -280,6 +282,9 @@ body {
 
 .workout-data{
   padding-left: 30px;
+  max-width: 400px;
+  min-width: 400px;
+  width: 400px;
 }
 
 .workout.tile {
@@ -335,7 +340,7 @@ body {
 
 .exercises-leftnav-container{
   position:fixed;
-  /*left:250px;*/
+  /* left:250px; */
 }
 
 .trashcan {
@@ -348,10 +353,6 @@ body {
   padding:5px;
 }
 
-.active{
-  background-color: rgb(73, 16, 73);
-}
-
 .tile-outside-button{
   margin-bottom:2px;
   padding-right:9px;
@@ -361,6 +362,12 @@ body {
 .tile-inside-button{
   margin-bottom:2px;
   background: #5bc0de;
+}
+
+.badge-pill{
+  padding-top:5px;
+  padding-bottom:5px;
+  margin-left:5px;
 }
 
 
