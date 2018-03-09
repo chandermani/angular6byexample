@@ -13,8 +13,42 @@ export class WorkoutService {
     }
 
     getExercises() {
-        return this.exercises;
+      return this.exercises;
+  }
+
+    getExercise(exerciseName: string) {
+      for (const exercise of this.exercises) {
+          if (exercise.name === exerciseName) { return exercise; }
+      }
+      return null;
     }
+
+    updateExercise(exercise: Exercise) {
+      for (let i = 0; i < this.exercises.length; i++) {
+          if (this.exercises[i].name === exercise.name) {
+              this.exercises[i] = exercise;
+          }
+      }
+      return exercise;
+    }
+
+    addExercise(exercise: Exercise) {
+        if (exercise.name) {
+            this.exercises.push(exercise);
+            return exercise;
+        }
+    }
+
+    deleteExercise(exerciseName: string) {
+        let exerciseIndex: number;
+        for (let i = 0; i < this.exercises.length; i++) {
+            if (this.exercises[i].name === exerciseName) {
+                exerciseIndex = i;
+            }
+        }
+        if (exerciseIndex >= 0) { this.exercises.splice(exerciseIndex, 1); }
+    }
+
 
     getWorkouts() {
         return this.workouts;
@@ -24,7 +58,23 @@ export class WorkoutService {
       for (const workout of this.workouts) {
           if (workout.name === name) { return workout; }
       }
-      return null;
+        return null;
+    }
+
+    addWorkout(workout: WorkoutPlan) {
+      if (workout.name) {
+          this.workouts.push(workout);
+          return workout;
+        }
+    }
+
+    updateWorkout(workout: WorkoutPlan) {
+      for (let i = 0; i < this.workouts.length; i++) {
+          if (this.workouts[i].name === workout.name) {
+              this.workouts[i] = workout;
+              break;
+          }
+      }
   }
 
     setupInitialExercises() {

@@ -6,6 +6,7 @@ import { WorkoutComponent } from './workout/workout.component';
 import { ExercisesComponent } from './exercises/exercises.component';
 import { ExerciseComponent } from './exercise/exercise.component';
 import { WorkoutResolver } from './workout.resolver';
+import { ExerciseResolver } from './exercise.resolver';
 
 const routes: Routes = [
   {
@@ -17,8 +18,8 @@ const routes: Routes = [
          {path: 'workout/new',  component: WorkoutComponent, resolve: { workout: WorkoutResolver} },
          {path: 'workout/:id', component: WorkoutComponent, resolve: { workout: WorkoutResolver} },
          {path: 'exercises', component: ExercisesComponent},
-         {path: 'exercise/new', component: ExerciseComponent },
-         {path: 'exercise/:id', component: ExerciseComponent }
+         {path: 'exercise/new', component: ExerciseComponent, resolve: { exercise: ExerciseResolver} },
+         {path: 'exercise/:id', component: ExerciseComponent, resolve: { exercise: ExerciseResolver} }
     ]
   },
 ];

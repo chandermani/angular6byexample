@@ -338,6 +338,28 @@ body {
   width:100%;
 }
 
+.exercise-container{
+  position:fixed;
+  height:90%;
+  overflow-y:auto;
+  width:100%;
+}
+
+.exercise-data{
+  padding-left: 30px;
+  max-width:500px;
+}
+
+.exercise-video{
+  padding-left: 30px;
+  max-width:500px;
+}
+
+.img-preview{
+  width:250px;
+  height:250px
+}
+
 .exercises-leftnav-container{
   position:fixed;
   /* left:250px; */
