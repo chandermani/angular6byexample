@@ -42,7 +42,7 @@
              <div id="workout-data" class="col-sm-3 workout-data">
                 <div class="form-group row">
                     <label for="workout-name">Name:</label>
-                    <input type="text" name="workoutName" #name="ngModel" class="form-control" id="workout-name" placeholder="Enter workout name. Must be unique." [(ngModel)]="workout.name" required>
+                    <input type="text" name="workoutName" #name="ngModel" class="form-control" id="workout-name" placeholder="Enter workout name. Must be unique." [(ngModel)]="workout.name" [ngModelOptions]="{updateOn: 'blur'}" required>
                     <label *ngIf="name.control.hasError('required') && (name.touched || submitted)" class="alert alert-danger validation-message">Name is required</label>
                 </div>
                 <div class="form-group row">

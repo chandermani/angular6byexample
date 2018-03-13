@@ -40,7 +40,13 @@ export class ExerciseComponent implements OnInit, OnDestroy {
 
   buildExerciseForm() {
       this.exerciseForm = this.formBuilder.group({
-          'name': [this.exercise.name, [Validators.required, AlphaNumericValidator.invalidAlphaNumeric]],
+          'name': [
+            this.exercise.name,
+            {
+              updateOn: 'blur',
+              validators: [Validators.required, AlphaNumericValidator.invalidAlphaNumeric]
+            }
+          ],
           'title': [this.exercise.title, Validators.required],
           'description': [this.exercise.description, Validators.required],
           'image': [this.exercise.image, Validators.required],
