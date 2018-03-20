@@ -15,11 +15,15 @@ export class WorkoutsComponent implements OnInit {
       public router: Router,
       public workoutService: WorkoutService) {}
 
-  ngOnInit() {
-      this.workoutList = this.workoutService.getWorkouts();
-  }
+      ngOnInit() {
+        this.workoutService.getWorkouts()
+            .subscribe(
+              workouts => this.workoutList = workouts,
+              (err: any) => console.error
+            );
+    }
 
   onSelect(workout: WorkoutPlan) {
-      this.router.navigate( ['./builder/workout', workout.name] );
+      // this.router.navigate( ['./builder/workout', workout.name] );
   }
 }

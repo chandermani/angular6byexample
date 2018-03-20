@@ -25,7 +25,7 @@ export class ExerciseResolver implements Resolve<Exercise> {
 
     if (this.exercise) {
         return this.exercise;
-    } else { // workoutName not found
+    } else { // exerciseName not found
         this.router.navigate(['/builder/exercises']);
         return null;
     }

@@ -2,7 +2,7 @@
     <div>
         <abe-left-nav-main></abe-left-nav-main>
     </div>
-    <div class="col-sm-10 builder-content">
+    <div class="col-sm-10 workout-container">
         <h1 class="text-center">Exercises</h1>
         <div *ngFor="let exercise of exerciseList|orderBy:'title'" class="exercise-tile" (click)="onSelect(exercise)">
           <div class="title">{{exercise.title}}</div>

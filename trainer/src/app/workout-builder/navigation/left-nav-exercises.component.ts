@@ -15,9 +15,13 @@ export class LeftNavExercisesComponent implements OnInit {
       public workoutService: WorkoutService,
       public workoutBuilderService: WorkoutBuilderService) {}
 
-    ngOnInit() {
-        this.exerciseList = this.workoutService.getExercises();
-    }
+      ngOnInit() {
+        this.workoutService.getExercises()
+        .subscribe(
+            exercises => this.exerciseList = exercises,
+            (err: any) => console.error
+        );
+      }
 
     addExercise(exercise: Exercise) {
       this.workoutBuilderService.addExercise(new ExercisePlan(exercise, 30));
