@@ -64,7 +64,7 @@ export class WorkoutService {
     }
 
     getWorkout(workoutName: string) {
-        return this.http.get(this.collectionsUrl + '/workouts/' + workoutName  + this.params)
+        return this.http.get<WorkoutPlan>(this.collectionsUrl + '/workouts/' + workoutName  + this.params)
             .pipe(catchError(WorkoutService.handleError));
     }
 
