@@ -21,10 +21,7 @@ export class VideoPlayerComponent implements OnInit{
   }
 
   playVideo(videoId: string) {
-    this.modal.open(VideoDialogComponent, overlayConfigFactory(new VideoDialogContext(videoId)));
-    this.modal.open(VideoDialogComponent, overlayConfigFactory(new VideoDialogContext(videoId)));
     this.playbackStarted.emit(null);
-    
     var dialog = this.modal.open(VideoDialogComponent, overlayConfigFactory(new VideoDialogContext(videoId)));
     dialog.result
       .then(() => { this.playbackEnded.emit(null); }, (error) => { this.playbackEnded.emit(null); });
