@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'abe-finish',
   templateUrl: './finish.component.html',
-  styleUrls: ['./finish.component.css']
+  styles:[]
 })
 export class FinishComponent implements OnInit {
 
