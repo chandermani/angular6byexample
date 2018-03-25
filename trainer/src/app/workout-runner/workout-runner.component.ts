@@ -5,7 +5,6 @@ import { WorkoutPlan, ExercisePlan, Exercise } from './model';
   selector: 'abe-workout-runner',
   templateUrl: './workout-runner.component.html',
   styles: []
-  encapsulation: ViewEncapsulation.None
 })
 export class WorkoutRunnerComponent implements OnInit {
   workoutPlan: WorkoutPlan;
