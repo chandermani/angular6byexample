@@ -5,8 +5,7 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'abe-workout-runner',
   templateUrl: './workout-runner.component.html',
-  styleUrls: ['./workout-runner.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styles: []
 })
 export class WorkoutRunnerComponent implements OnInit {
   workoutPlan: WorkoutPlan;
@@ -20,6 +19,7 @@ export class WorkoutRunnerComponent implements OnInit {
 
   constructor(private router: Router) {
   }
+
   ngOnInit() {
     this.workoutPlan = this.buildWorkout();
     this.restExercise = new ExercisePlan(new Exercise('rest', 'Relax!', 'Relax a bit', 'rest.png'), this.workoutPlan.restBetweenExercise);
