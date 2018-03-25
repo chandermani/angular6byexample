@@ -4,8 +4,7 @@ import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'abe-video-player',
   templateUrl: './video-player.component.html',
-  styleUrls: ['./video-player.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styles:[]
 })
 export class VideoPlayerComponent implements OnInit, OnChanges {
 
