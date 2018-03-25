@@ -4,8 +4,7 @@ import { WorkoutPlan, ExercisePlan, Exercise } from './model';
 @Component({
   selector: 'abe-workout-runner',
   templateUrl: './workout-runner.component.html',
-  styleUrls: ['./workout-runner.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styles: []
 })
 export class WorkoutRunnerComponent implements OnInit {
   workoutPlan: WorkoutPlan;
