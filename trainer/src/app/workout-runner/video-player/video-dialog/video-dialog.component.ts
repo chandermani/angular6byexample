@@ -13,7 +13,7 @@ export class VideoDialogContext extends BSModalContext {
 @Component({
   selector: 'abe-video-dialog',
   templateUrl: './video-dialog.component.html',
-  styleUrls: ['./video-dialog.component.css']
+  styles:[]
 })
 export class VideoDialogComponent implements OnInit, ModalComponent<VideoDialogContext> {
   videoId: SafeResourceUrl;

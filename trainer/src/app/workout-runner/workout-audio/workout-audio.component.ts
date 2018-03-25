@@ -5,7 +5,7 @@ import { ExerciseProgressEvent, ExerciseChangedEvent } from '../model';
 @Component({
   selector: 'abe-workout-audio',
   templateUrl: './workout-audio.component.html',
-  styleUrls: ['./workout-audio.component.css']
+  styles: []
 })
 export class WorkoutAudioComponent implements OnInit {
   @ViewChild('ticks') private ticks: MyAudioDirective;
