@@ -6,8 +6,7 @@ import { WorkoutPlan, ExercisePlan, Exercise } from './model';
   // templateUrl: './workout-runner.component.html',
   template: ` <pre>Current Exercise: {{currentExercise | json}}</pre>
               <pre>Time Left: {{currentExercise.duration-exerciseRunningDuration}}</pre>`,
-  styleUrls: ['./workout-runner.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styles: []
 })
 export class WorkoutRunnerComponent implements OnInit {
   workoutPlan: WorkoutPlan;
