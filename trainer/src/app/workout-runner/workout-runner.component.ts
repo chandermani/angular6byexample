@@ -4,8 +4,7 @@ import { WorkoutPlan, ExercisePlan, Exercise } from './model';
 @Component({
   selector: 'abe-workout-runner',
   templateUrl: './workout-runner.component.html',
-  styleUrls: ['./workout-runner.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styles: []
 })
 export class WorkoutRunnerComponent implements OnInit {
   workoutPlan: WorkoutPlan;
@@ -19,6 +18,7 @@ export class WorkoutRunnerComponent implements OnInit {
 
   constructor() {
   }
+
   ngOnInit() {
     this.workoutPlan = this.buildWorkout();
     this.restExercise = new ExercisePlan(new Exercise('rest', 'Relax!', 'Relax a bit', 'rest.png'), this.workoutPlan.restBetweenExercise);
