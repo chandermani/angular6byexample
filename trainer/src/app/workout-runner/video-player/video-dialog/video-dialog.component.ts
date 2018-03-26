@@ -6,14 +6,14 @@ import { BSModalContext } from 'ngx-modialog/plugins/bootstrap';
 export class VideoDialogContext extends BSModalContext {
   constructor(public videoId: string) {
     super();
-    this.size = "sm";
+    this.size = 'lg';
   }
 }
 
 @Component({
   selector: 'abe-video-dialog',
   templateUrl: './video-dialog.component.html',
-  styleUrls: ['./video-dialog.component.css']
+  styles:[]
 })
 export class VideoDialogComponent implements OnInit, ModalComponent<VideoDialogContext> {
   videoId: SafeResourceUrl;
