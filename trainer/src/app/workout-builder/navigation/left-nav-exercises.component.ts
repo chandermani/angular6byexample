@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 
 import { WorkoutService } from '../../core/workout.service';
 import { Exercise, ExercisePlan } from '../../core/model';
-import { WorkoutBuilderService } from '../workout-builder.service';
+import { WorkoutBuilderService } from '../builder-services/workout-builder.service';
 
 @Component({
     selector: 'abe-left-nav-exercises',

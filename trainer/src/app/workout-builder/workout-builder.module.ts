@@ -12,10 +12,10 @@ import { LeftNavExercisesComponent } from './navigation/left-nav-exercises.compo
 import { LeftNavMainComponent } from './navigation/left-nav-main.component';
 import { SubNavMainComponent } from './navigation/sub-nav-main.component';
 import { SharedModule } from '../shared/shared.module';
-import { WorkoutBuilderService } from './workout-builder.service';
-import { WorkoutResolver } from './workout.resolver';
-import { ExerciseBuilderService } from './exercise-builder.service';
-import { ExerciseResolver } from './exercise.resolver';
+import { WorkoutBuilderService } from './builder-services/workout-builder.service';
+import { WorkoutResolver } from './workout/workout.resolver';
+import { ExerciseBuilderService } from './builder-services/exercise-builder.service';
+import { ExerciseResolver } from './exercise/exercise.resolver';
 
 @NgModule({
   imports: [

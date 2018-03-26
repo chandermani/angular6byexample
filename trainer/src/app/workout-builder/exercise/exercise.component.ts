@@ -3,8 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Validators, FormArray, FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Exercise } from '../../core/model';
 import { AlphaNumericValidator } from '../alphanumeric-validator';
-import { ExerciseBuilderService } from '../exercise-builder.service';
-
+import { ExerciseBuilderService } from '../builder-services/exercise-builder.service';
 
 @Component({
   selector: 'abe-exercise',

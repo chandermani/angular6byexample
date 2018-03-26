@@ -1,17 +1,20 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+
 import { WorkoutPlan, ExercisePlan } from '../../core/model';
-import { WorkoutBuilderService } from '../workout-builder.service';
+import { WorkoutBuilderService } from '../builder-services/workout-builder.service';
 
 @Component({
   selector: 'abe-workout',
   templateUrl: './workout.component.html'
 })
 export class WorkoutComponent implements OnInit, OnDestroy {
+  error: any;
   public workout: WorkoutPlan;
   public sub: any;
   public submitted = false;
   public removeTouched = false;
+  isExistingWorkout = false;
 
   constructor(
       public route: ActivatedRoute,

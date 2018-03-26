@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Exercise } from '../core/model';
-import { WorkoutService } from '../core/workout.service';
+import { WorkoutService } from '../../core/workout.service';
+import { Exercise } from '../../core/model';
 
 @Injectable()
 export class ExerciseBuilderService {
@@ -9,15 +9,15 @@ export class ExerciseBuilderService {
 
     constructor(private workoutService: WorkoutService) {}
 
-    startBuilding(name: string) {
-        if (name) {
-            this.buildingExercise = this.workoutService.getExercise(name);
-            this.newExercise = false;
-        } else {
-            this.buildingExercise = new Exercise('', '', '', '');
-            this.newExercise = true;
-        }
-        return this.buildingExercise;
+    startBuildingNew() {
+      this.buildingExercise = new Exercise('', '', '', '');
+      this.newExercise = true;
+      return this.buildingExercise;
+    }
+
+    startBuildingExisting(name: string) {
+      this.newExercise = false;
+      return this.workoutService.getExercise(name);
     }
 
     save() {

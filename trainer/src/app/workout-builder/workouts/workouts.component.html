@@ -7,7 +7,7 @@
       <div *ngFor="let workout of workoutList|orderBy:'title'" class="workout tile" (click)="onSelect(workout)">
         <div class="title">{{workout.title}}</div>
         <div class="stats">
-            <span class="duration" title="Duration"><span class="ion-md-time"></span> - {{workout.totalWorkoutDuration? workout.totalWorkoutDuration(): 0|secondsToTime}}</span>
+            <span class="duration" title="Duration"><span class="ion-md-time"></span> - {{(workout.totalWorkoutDuration? workout.totalWorkoutDuration(): 0)|secondsToTime}}</span>
             <span class="float-right" title="Exercise Count"><span class="ion-md-list"></span> - {{workout.exercises.length}}</span>
         </div>
       </div>
