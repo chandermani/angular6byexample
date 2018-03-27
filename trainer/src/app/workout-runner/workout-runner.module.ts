@@ -13,9 +13,6 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     SharedModule
   ],
-  exports: [
-    WorkoutRunnerComponent
-  ],
   declarations: [WorkoutRunnerComponent,
     ExerciseDescriptionComponent,
     VideoPlayerComponent,
@@ -23,6 +20,5 @@ import { SharedModule } from '../shared/shared.module';
     WorkoutContainerComponent,
     WorkoutAudioComponent],
   entryComponents: [VideoDialogComponent]
-
 })
 export class WorkoutRunnerModule { }
