@@ -10,6 +10,7 @@ import { WorkoutBuilderService } from '../builder-services/workout-builder.servi
 })
 export class LeftNavExercisesComponent implements OnInit {
     exerciseList: Array<Exercise> = [];
+    errorMessage: any;
 
     constructor(
       public workoutService: WorkoutService,
@@ -17,9 +18,8 @@ export class LeftNavExercisesComponent implements OnInit {
 
       ngOnInit() {
         this.workoutService.getExercises()
-        .subscribe(
-            exercises => this.exerciseList = exercises,
-            (err: any) => console.error
+        .then(exerciseList => this.exerciseList = exerciseList,
+          error => this.errorMessage = <any>error
         );
       }
 

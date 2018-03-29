@@ -20,9 +20,13 @@ export class WorkoutService {
     constructor(public http: HttpClient) {
     }
 
-    getExercises(): Observable<Exercise[]> {
+    getExercises(): Promise<Exercise[]> {
         return this.http.get<Exercise[]>(this.collectionsUrl + '/exercises' + this.params)
-            .pipe(catchError(this.handleError('getExercises', [])));
+        .toPromise()
+        .then(res => res)
+        .catch(err => {
+            return Promise.reject(this.handleError('getExercises', []));
+        });
     }
 
     getExercise (exerciseName: string): Observable<Exercise> {
@@ -106,21 +110,59 @@ export class WorkoutService {
         );
       }
 
-      addWorkout(workout: WorkoutPlan) {
-          if (workout.name) {
-              this.workouts.push(workout);
-              return workout;
+    addWorkout(workout: WorkoutPlan) {
+      const workoutExercises: any = [];
+      workout.exercises.forEach(
+          (exercisePlan: any) => {
+              workoutExercises.push({name: exercisePlan.exercise.name, duration: exercisePlan.duration});
           }
-      }
+      );
 
-      updateWorkout(workout: WorkoutPlan) {
-          for (let i = 0; i < this.workouts.length; i++) {
-              if (this.workouts[i].name === workout.name) {
-                  this.workouts[i] = workout;
-                  break;
-              }
+      const body = {
+          '_id': workout.name,
+          'exercises': workoutExercises,
+          'name': workout.name,
+          'title': workout.title,
+          'description': workout.description,
+          'restBetweenExercise': workout.restBetweenExercise
+      };
+
+      return this.http.post(this.collectionsUrl + '/workouts' + this.params, body)
+        .pipe(
+          catchError(this.handleError<WorkoutPlan>())
+        );
+
+    }
+
+    updateWorkout(workout: WorkoutPlan) {
+      const workoutExercises: any = [];
+      workout.exercises.forEach(
+          (exercisePlan: any) => {
+              workoutExercises.push({name: exercisePlan.exercise.name, duration: exercisePlan.duration});
           }
-      }
+      );
+
+      const body = {
+          '_id': workout.name,
+          'exercises': workoutExercises,
+          'name': workout.name,
+          'title': workout.title,
+          'description': workout.description,
+          'restBetweenExercise': workout.restBetweenExercise
+      };
+
+      return this.http.put(this.collectionsUrl + '/workouts/' + workout.name + this.params, body)
+        .pipe(
+          catchError(this.handleError<WorkoutPlan>())
+        );
+    }
+
+    deleteWorkout(workoutName: string) {
+        return this.http.delete(this.collectionsUrl + '/workouts/' + workoutName + this.params)
+          .pipe(
+            catchError(this.handleError<WorkoutPlan>())
+          );
+    }
 
     private handleError<T> (operation = 'operation', result?: T) {
       return (error: HttpErrorResponse): Observable<T> => {

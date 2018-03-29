@@ -9,12 +9,12 @@ import { WorkoutBuilderService } from '../builder-services/workout-builder.servi
   templateUrl: './workout.component.html'
 })
 export class WorkoutComponent implements OnInit, OnDestroy {
-  error: any;
+  public error: any;
   public workout: WorkoutPlan;
   public sub: any;
   public submitted = false;
   public removeTouched = false;
-  isExistingWorkout = false;
+  public isExistingWorkout = false;
 
   constructor(
       public route: ActivatedRoute,
@@ -63,13 +63,15 @@ export class WorkoutComponent implements OnInit, OnDestroy {
   removeExercise(exercisePlan: ExercisePlan) {
     this.removeTouched = true;
     this.workoutBuilderService.removeExercise(exercisePlan);
-}
+  }
 
   save(formWorkout: any) {
     this.submitted = true;
     if (!formWorkout.valid) { return; }
-    this.workoutBuilderService.save();
-    this.router.navigate(['/builder/workouts']);
+    this.workoutBuilderService.save().subscribe(
+      success => this.router.navigate(['/builder/workouts']),
+      err => console.error(err)
+    );
   }
 
   cancel(formWorkout: any) {

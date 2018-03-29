@@ -32,6 +32,7 @@ export class WorkoutResolver implements Resolve<WorkoutPlan> {
         .pipe(
           map(workout => {
             if (workout) {
+              this.workoutBuilderService.buildingWorkout = workout;
               return workout;
             } else {
               this.router.navigate(['/builder/workouts']);
