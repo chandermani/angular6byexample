@@ -4,6 +4,7 @@
     </div>
     <div class="col-sm-10 workout-container">
       <h1 class="text-center">Workouts</h1>
+      <div *ngIf="notFound" class="not-found-msgbox">Could not load the specific workout!</div>
       <div *ngFor="let workout of workoutList|orderBy:'title'" class="workout tile" (click)="onSelect(workout)">
         <div class="title">{{workout.title}}</div>
         <div class="stats">

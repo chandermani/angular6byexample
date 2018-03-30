@@ -19,8 +19,9 @@ export class ExercisesComponent implements OnInit {
 
   ngOnInit() {
     this.workoutService.getExercises()
-    .then(exerciseList => this.exerciseList = exerciseList,
-      error => this.errorMessage = <any>error
+    .subscribe(
+        exercises => this.exerciseList = exercises,
+        (err: any) => console.error
     );
   }
   onSelect(exercise: Exercise) {

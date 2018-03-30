@@ -20,13 +20,9 @@ export class WorkoutService {
     constructor(public http: HttpClient) {
     }
 
-    getExercises(): Promise<Exercise[]> {
-        return this.http.get<Exercise[]>(this.collectionsUrl + '/exercises' + this.params)
-        .toPromise()
-        .then(res => res)
-        .catch(err => {
-            return Promise.reject(this.handleError('getExercises', []));
-        });
+    getExercises(): Observable<Exercise[]> {
+      return this.http.get<Exercise[]>(this.collectionsUrl + '/exercises' + this.params)
+      .pipe(catchError(this.handleError('getExercises', [])));
     }
 
     getExercise (exerciseName: string): Observable<Exercise> {

@@ -386,4 +386,15 @@ body {
   margin-left:5px;
 }
 
+.not-found-msgbox{
+  margin-bottom: 20px;
+  width: 300px;
+  border-color: red;
+  background-color: red;
+  padding: 20px;
+  font-size: 11pt;
+  color: white;
+  font-weight: bold;
+}
+
 

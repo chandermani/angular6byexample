@@ -1,5 +1,4 @@
 <div class="row">
-  <div class="col-sm-3"></div>
   <div class="col-sm-6">
     <h1 class="text-center">Ready for a Workout?</h1>
     <br />
@@ -8,8 +7,8 @@
     </div>
     <br />
     <div id="start" class="row">
-      <a routerLink="/workout" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">
-        <span>Start</span>
+      <a routerLink="/" class="btn btn-primary btn-lg btn-block" role="button" aria-pressed="true">
+        <span>Select a Workout</span>
         <span class="ion-md-play"></span>
       </a>
     </div>
@@ -21,5 +20,23 @@
       </a>
     </div>
   </div>
-  <div class="col-sm-3"></div>
+  <div class="col-sm-4">
+    <h2>Workouts</h2>
+    <form #f="ngForm" name="formWorkout" class="row">
+        <div class="form-group">
+            <input type="text" class="form-control" name="search" placeholder="Search for Workout"
+                   [(ngModel)]="searchTerm"/>
+        </div>
+        <div *ngIf="workoutList && workoutList.length > 0">
+            <div *ngFor="let workout of workoutList|search:'title': searchTerm|orderBy:'title'" class="workout tile"
+                 (click)="onSelect(workout)">
+                <div class="title">{{workout.title}}</div>
+                <div class="stats">
+                    <span class="duration" title="Duration"><span class="ion-md-time"></span> - {{(workout.totalWorkoutDuration? workout.totalWorkoutDuration(): 0)|secondsToTime}}</span>
+                    <span class="float-right" title="Exercise Count"><span class="ion-md-list"></span> - {{workout.exercises.length}}</span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
 </div>
