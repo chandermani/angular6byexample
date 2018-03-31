@@ -42,8 +42,14 @@
              <div id="workout-data" class="col-sm-3 workout-data">
                 <div class="form-group row">
                     <label for="workout-name">Name:</label>
-                    <input type="text" name="workoutName" #name="ngModel" class="form-control" id="workout-name" placeholder="Enter workout name. Must be unique." [(ngModel)]="workout.name" [ngModelOptions]="{updateOn: 'submit'}" required>
-                    <label *ngIf="name.control.hasError('required') && (name.touched || submitted)" class="alert alert-danger validation-message">Name is required</label>
+                    <input type="text" name="workoutName" #name="ngModel" class="form-control" id="workout-name" placeholder="Enter workout name. Must be unique." [(ngModel)]="workout.name" 
+                        abeRemoteValidator="workoutname" [validateFunction]="validateWorkoutName"
+                        [ngModelOptions]="{updateOn: 'blur'}" 
+                        required>
+                        <div *ngIf="name.touched || submitted">
+                            <label *ngIf="name.control.hasError('required')" class="alert alert-danger validation-message">Name is required</label>
+                            <label *ngIf="name.control.hasError('workoutname')" class="alert alert-danger validation-message">A workout with this name already exists.</label>
+                        </div>
                 </div>
                 <div class="form-group row">
                     <label for="workout-title">Title:</label>
