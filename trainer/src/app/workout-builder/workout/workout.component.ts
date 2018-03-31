@@ -49,7 +49,7 @@ export class WorkoutComponent implements OnInit, OnDestroy {
 
 
   ngOnInit() {
-    this.queryParamsSub = this.route.queryParams.subscribe(params => this.workoutName = params['id']);
+    this.queryParamsSub = this.route.params.subscribe(params => this.workoutName = params['id']);
     this.sub = this.route.data
       .subscribe(
       (data: { workout: WorkoutPlan }) => {
