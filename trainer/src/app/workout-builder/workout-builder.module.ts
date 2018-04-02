@@ -13,7 +13,7 @@ import { LeftNavMainComponent } from './navigation/left-nav-main.component';
 import { SubNavMainComponent } from './navigation/sub-nav-main.component';
 import { SharedModule } from '../shared/shared.module';
 import { WorkoutBuilderService } from './workout-builder.service';
-import { WorkoutResolver } from './workout.resolver';
+import { WorkoutResolver } from './workout/workout.resolver';
 
 @NgModule({
   imports: [

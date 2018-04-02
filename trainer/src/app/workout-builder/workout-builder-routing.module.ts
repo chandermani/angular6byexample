@@ -5,7 +5,7 @@ import { WorkoutsComponent } from './workouts/workouts.component';
 import { WorkoutComponent } from './workout/workout.component';
 import { ExercisesComponent } from './exercises/exercises.component';
 import { ExerciseComponent } from './exercise/exercise.component';
-import { WorkoutResolver } from './workout.resolver';
+import { WorkoutResolver } from './workout/workout.resolver';
 
 const routes: Routes = [
   {
