@@ -148,6 +148,8 @@ body {
   background-color:#995466;
   color:white;
   text-align:center;
+  width:275px;
+  max-width: 275px;
 }
 
 .left-nav-exercises-bar button:hover{
@@ -262,3 +264,135 @@ body {
   background:#1D89CF;
 }
 /*styles for tile- end*/
+
+.workout-container{
+  position:fixed;
+  left:350px;
+  height:calc(100vh - 75px - 50px);
+  overflow-y:auto;
+  overflow-x: hidden;
+  width:100%;
+}
+
+.workout-data{
+  padding-left: 30px;
+  max-width: 400px;
+  min-width: 400px;
+  width: 400px;
+}
+
+.workout.tile {
+  width: 300px;
+  height: 80px;
+  background: #5bc0de;
+  color: white;
+  padding:10px;
+  margin-bottom:10px;
+}
+.workout.tile:hover{
+  background:#1D89CF;
+}
+
+.workout .title{
+  font-size: 20pt;
+  text-align: center;
+}
+.workout .stats{
+  font-size: 12pt;
+  padding:0 10px 0 10px;
+}
+
+.list-title{
+  max-width:300px;
+}
+
+.exercise-list{
+  min-width: 350px;
+}
+
+.exercise-tile {
+  width: 300px;
+  height: 50px;
+  background: #5bc0de;
+  color: white;
+  padding:5px;
+  margin-bottom:10px;
+  font-size: 18pt;
+  text-align: center;
+}
+.exercise-tile:hover {
+  background:#1D89CF;
+}
+
+.exercises-container{
+  position:fixed;
+  left:350px;
+  height:85%;
+  overflow-y:auto;
+  width:100%;
+}
+
+.exercise-container{
+  position:fixed;
+  height:90%;
+  overflow-y:auto;
+  width:100%;
+}
+
+.exercise-data{
+  padding-left: 30px;
+  max-width:500px;
+}
+
+.exercise-video{
+  padding-left: 30px;
+  max-width:500px;
+}
+
+.img-preview{
+  width:250px;
+  height:250px
+}
+
+.exercises-leftnav-container{
+  position:fixed;
+  /* left:250px; */
+}
+
+.trashcan {
+  font-size:30px;
+  margin-right:-12px;
+  margin-top: -16px;
+}
+
+.order{
+  padding:5px;
+}
+
+.tile-outside-button{
+  margin-bottom:2px;
+  padding-right:9px;
+  background: #5bc0de;
+}
+
+.tile-inside-button{
+  margin-bottom:2px;
+  background: #5bc0de;
+}
+
+.badge-pill{
+  padding-top:5px;
+  padding-bottom:5px;
+  margin-left:5px;
+}
+
+.not-found-msgbox{
+  margin-bottom: 20px;
+  width: 300px;
+  border-color: red;
+  background-color: red;
+  padding: 20px;
+  font-size: 11pt;
+  color: white;
+  font-weight: bold;
+}
