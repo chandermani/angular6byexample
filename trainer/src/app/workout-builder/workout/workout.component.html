@@ -44,8 +44,8 @@
                     <label for="workout-name">Name:</label>
                     <input type="text" name="workoutName" #name="ngModel" class="form-control" id="workout-name" placeholder="Enter workout name. Must be unique." [(ngModel)]="workout.name" 
                         abeRemoteValidator="workoutname" [validateFunction]="validateWorkoutName"
-                        [ngModelOptions]="{updateOn: 'blur'}" 
-                        required>
+                        [ngModelOptions]="{updateOn: 'blur'}"
+                        abeBusyIndicator required>
                         <div *ngIf="name.touched || submitted">
                             <label *ngIf="name.control.hasError('required')" class="alert alert-danger validation-message">Name is required</label>
                             <label *ngIf="name.control.hasError('workoutname')" class="alert alert-danger validation-message">A workout with this name already exists.</label>
