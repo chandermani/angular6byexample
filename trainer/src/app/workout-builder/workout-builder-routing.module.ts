@@ -5,8 +5,8 @@ import { WorkoutsComponent } from './workouts/workouts.component';
 import { WorkoutComponent } from './workout/workout.component';
 import { ExercisesComponent } from './exercises/exercises.component';
 import { ExerciseComponent } from './exercise/exercise.component';
-import { WorkoutResolver } from './workout.resolver';
-import { ExerciseResolver } from './exercise.resolver';
+import { WorkoutResolver } from './workout/workout.resolver';
+import { ExerciseResolver } from './exercise/exercise.resolver';
 
 const routes: Routes = [
   {
