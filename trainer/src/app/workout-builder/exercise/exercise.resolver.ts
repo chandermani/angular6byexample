@@ -1,8 +1,7 @@
 import { Resolve, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Injectable } from '@angular/core';
-
-import { Exercise } from '../core/model';
-import { ExerciseBuilderService } from './exercise-builder.service';
+import { Exercise } from '../../core/model';
+import { ExerciseBuilderService } from '../builder-services/exercise-builder.service';
 
 @Injectable()
 export class ExerciseResolver implements Resolve<Exercise> {
