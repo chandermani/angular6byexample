@@ -14,7 +14,6 @@ export class WorkoutComponent implements OnInit, OnDestroy {
   public sub: any;
   public submitted = false;
   public removeTouched = false;
-  isExistingWorkout = false;
 
   constructor(
       public route: ActivatedRoute,

@@ -10,10 +10,6 @@ import { WorkoutPlan } from '../../core/model';
 @Injectable()
 export class WorkoutResolver implements Resolve<WorkoutPlan> {
   public workout: WorkoutPlan;
-  private sub: any;
-  private submitted = false;
-  private removeTouched = false;
-  private isExistingWorkout = false;
 
   constructor(
     public workoutBuilderService: WorkoutBuilderService,
@@ -27,7 +23,6 @@ export class WorkoutResolver implements Resolve<WorkoutPlan> {
     if (!workoutName) {
         return this.workoutBuilderService.startBuildingNew();
     } else {
-        this.isExistingWorkout = true;
         return this.workoutBuilderService.startBuildingExisting(workoutName)
         .pipe(
           map(workout => {
