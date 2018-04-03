@@ -1,10 +1,8 @@
 import { Resolve, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 
 import { WorkoutPlan } from '../../core/model';
 import { WorkoutBuilderService } from '../builder-services/workout-builder.service';
-
 
 @Injectable()
 export class WorkoutResolver implements Resolve<WorkoutPlan> {
