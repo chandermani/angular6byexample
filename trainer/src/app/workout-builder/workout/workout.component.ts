@@ -71,13 +71,16 @@ export class WorkoutComponent implements OnInit, OnDestroy {
     this.workoutBuilderService.removeExercise(exercisePlan);
   }
 
-  save(formWorkout: any) {
+  save = (formWorkout: any): Promise<Object | WorkoutPlan> => {
     this.submitted = true;
     if (!formWorkout.valid) { return; }
-    this.workoutBuilderService.save().subscribe(
-      success => this.router.navigate(['/builder/workouts']),
+    const savePromise = this.workoutBuilderService.save().toPromise();
+
+    savePromise.then(
+      result => this.router.navigate(['/builder/workouts']),
       err => console.error(err)
     );
+    return savePromise;
   }
 
   cancel(formWorkout: any) {

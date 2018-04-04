@@ -78,7 +78,7 @@
                      <p class="badge badge-pill badge-primary" *ngIf="workout.exercises?.length==0"></p>
                  </div>
                  <div class="row">
-                     <button type="submit" class="btn btn-warning">Save</button>
+                    <abe-ajax-button [execute]="save" [parameter]="f"></abe-ajax-button> 
                  </div>
              </div>
          </form>

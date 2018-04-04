@@ -6,6 +6,7 @@ import { MyAudioDirective } from './my-audio.directive';
 import { SecondsToTimePipe } from './seconds-to-time.pipe';
 import { RemoteValidatorDirective } from './remote-validator.directive';
 import { BusyIndicatorDirective } from './busy-indicator.directive';
+import { AjaxButtonComponent } from './ajax-button/ajax-button.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { BusyIndicatorDirective } from './busy-indicator.directive';
     SearchPipe,
     MyAudioDirective,
     RemoteValidatorDirective,
-    BusyIndicatorDirective
+    BusyIndicatorDirective,
+    AjaxButtonComponent
   ],
   exports: [
     OrderByPipe,
@@ -25,7 +27,8 @@ import { BusyIndicatorDirective } from './busy-indicator.directive';
     SearchPipe,
     MyAudioDirective,
     RemoteValidatorDirective,
-    BusyIndicatorDirective
+    BusyIndicatorDirective,
+    AjaxButtonComponent
   ]
 })
 export class SharedModule { }
