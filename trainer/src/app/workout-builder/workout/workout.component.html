@@ -78,7 +78,10 @@
                      <p class="badge badge-pill badge-primary" *ngIf="workout.exercises?.length==0"></p>
                  </div>
                  <div class="row">
-                    <abe-ajax-button [execute]="save" [parameter]="f"></abe-ajax-button> 
+                    <abe-ajax-button [execute]="save" [parameter]="f">
+                        <div class="ion-md-cloud-upload spin" data-animator></div>
+                        <span data-content>Save</span>
+                    </abe-ajax-button> 
                  </div>
              </div>
          </form>
