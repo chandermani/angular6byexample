@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WorkoutBuilderComponent } from './workout-builder.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('WorkoutBuilderComponent', () => {
   let component: WorkoutBuilderComponent;
@@ -8,7 +9,8 @@ describe('WorkoutBuilderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WorkoutBuilderComponent ]
+      declarations: [ WorkoutBuilderComponent ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     })
     .compileComponents();
   }));

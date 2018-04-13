@@ -49,7 +49,6 @@ export class WorkoutComponent implements OnInit, OnDestroy {
 
 
   ngOnInit() {
-    this.queryParamsSub = this.route.params.subscribe(params => this.workoutName = params['id']);
     this.sub = this.route.data
       .subscribe(
       (data: { workout: WorkoutPlan }) => {
@@ -90,7 +89,6 @@ export class WorkoutComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.sub.unsubscribe();
-    this.queryParamsSub.unsubscribe();
   }
 
   validateWorkoutName = (name: string): Promise<boolean> => {

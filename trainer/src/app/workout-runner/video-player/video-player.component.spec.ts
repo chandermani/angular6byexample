@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { VideoPlayerComponent } from './video-player.component';
+import { Modal } from 'ngx-modialog/plugins/bootstrap';
+import { Overlay, OverlayRenderer } from 'ngx-modialog';
 
 describe('VideoPlayerComponent', () => {
   let component: VideoPlayerComponent;
@@ -8,7 +10,8 @@ describe('VideoPlayerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VideoPlayerComponent ]
+      declarations: [ VideoPlayerComponent ],
+      providers: [Modal, Overlay, OverlayRenderer ]
     })
     .compileComponents();
   }));

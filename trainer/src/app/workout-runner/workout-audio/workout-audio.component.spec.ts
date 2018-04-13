@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WorkoutAudioComponent } from './workout-audio.component';
+import { SharedModule } from '../../shared/shared.module';
 
 describe('WorkoutAudioComponent', () => {
   let component: WorkoutAudioComponent;
@@ -8,7 +9,8 @@ describe('WorkoutAudioComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WorkoutAudioComponent ]
+      declarations: [ WorkoutAudioComponent ],
+      imports: [ SharedModule]
     })
     .compileComponents();
   }));

@@ -1,6 +1,24 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
 
 import { VideoDialogComponent } from './video-dialog.component';
+import { DialogRef } from 'ngx-modialog';
+
+class MockContext {
+  videoId;
+  constructor(vidId) {
+    this.videoId = vidId;
+  }
+}
+
+class MockDialogRef {
+  context: MockContext;
+  constructor(mock: MockContext) {
+    this.context = mock;
+  }
+  close() {
+    return null;
+  }
+}
 
 describe('VideoDialogComponent', () => {
   let component: VideoDialogComponent;
@@ -8,7 +26,10 @@ describe('VideoDialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VideoDialogComponent ]
+      declarations: [ VideoDialogComponent ],
+      providers: [
+        { provide: DialogRef, useValue: new MockDialogRef(new MockContext(1))},
+      ]
     })
     .compileComponents();
   }));
@@ -16,10 +37,11 @@ describe('VideoDialogComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(VideoDialogComponent);
     component = fixture.componentInstance;
+    component.ngOnInit();
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create',  () => {
     expect(component).toBeTruthy();
   });
 });
