@@ -1,8 +1,9 @@
 import { SecondsToTimePipe } from './seconds-to-time.pipe';
-
 describe('SecondsToTimePipe', () => {
-  it('create an instance', () => {
-    const pipe = new SecondsToTimePipe();
-    expect(pipe).toBeTruthy();
+  const pipe = new SecondsToTimePipe();
+  it('should convert integer to time format', () => {
+      expect(pipe.transform(5)).toEqual('00:00:05');
+      expect(pipe.transform(65)).toEqual('00:01:05');
+      expect(pipe.transform(3610)).toEqual('01:00:10');
   });
 });

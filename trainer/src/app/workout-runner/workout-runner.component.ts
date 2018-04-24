@@ -46,7 +46,7 @@ export class WorkoutRunnerComponent implements OnInit, DoCheck, OnDestroy {
     if (!this.dataLoaded) {
         this.start();
     }
-}
+  }
 
   getWorkout(name: string) {
     this.workoutService.getWorkout(name)
@@ -58,7 +58,7 @@ export class WorkoutRunnerComponent implements OnInit, DoCheck, OnDestroy {
                 console.error(err);
             }
         );
-}
+  }
 
   start() {
     if (this.workoutPlan) {
@@ -76,7 +76,7 @@ export class WorkoutRunnerComponent implements OnInit, DoCheck, OnDestroy {
     clearInterval(this.exerciseTrackingInterval);
     this.workoutPaused = true;
     this.exercisePaused.emit(this.currentExerciseIndex);
-  }
+   }
 
   resume() {
     this.startExerciseTimeTracking();
