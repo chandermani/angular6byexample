@@ -52,8 +52,9 @@ export class WorkoutComponent implements OnInit, OnDestroy {
     this.sub = this.route.data
       .subscribe(
       (data: { workout: WorkoutPlan }) => {
-        this.workout = data.workout;
-      }
+          this.workout = data.workout;
+          this.workoutName = this.workout.name;
+        }
       );
   }
 
@@ -102,4 +103,7 @@ export class WorkoutComponent implements OnInit, OnDestroy {
       });
   }
 
+  updateDuration(duration, exercisePlan) {
+    exercisePlan.duration = Number(duration);
+  }
 }

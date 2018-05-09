@@ -95,9 +95,9 @@ export class WorkoutService {
                           data[1].description
                       );
                       workout.exercises.forEach(
-                          (exercisePlan: any) => exercisePlan.exercise = allExercises.find(
-                              (x: any) => x.name === exercisePlan.name
-                          )
+                        (exercisePlan: any) => exercisePlan.exercise = allExercises.find(
+                            (x: any) => x.name === exercisePlan.name
+                        )
                       );
                       return workout;
                   }
@@ -110,7 +110,7 @@ export class WorkoutService {
       const workoutExercises: any = [];
       workout.exercises.forEach(
           (exercisePlan: any) => {
-              workoutExercises.push({name: exercisePlan.exercise.name, duration: exercisePlan.duration});
+              workoutExercises.push({name: exercisePlan.exercise.name, duration: parseInt(exercisePlan.duration, 10)});
           }
       );
 
@@ -134,7 +134,7 @@ export class WorkoutService {
       const workoutExercises: any = [];
       workout.exercises.forEach(
           (exercisePlan: any) => {
-              workoutExercises.push({name: exercisePlan.exercise.name, duration: exercisePlan.duration});
+              workoutExercises.push({name: exercisePlan.exercise.name, duration: parseInt(exercisePlan.duration, 10)});
           }
       );
 
