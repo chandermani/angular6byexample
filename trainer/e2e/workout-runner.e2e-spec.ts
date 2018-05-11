@@ -32,37 +32,36 @@ describe('Workout Runner', () => {
       });
   });
 
-  describe('Workout Runner page', () => {
-      beforeEach(() => {
-          browser.get('/workout/1minworkout');
-          // jasmine.DEFAULT_TIMEOUT_INTERVAL = 6000000;
-      });
+describe('Workout Runner page', () => {
+    beforeEach(() => {
+        browser.get('/workout/1minworkout');
+    });
 
-      it('should load workout data', () => {
-          browser.waitForAngularEnabled(false);
-          const page = new WorkoutRunnerPage();
-          page.pauseResume.click();
-          expect(page.exerciseTitle).toBe('Jumping Jacks');
-          expect(page.exerciseDescription)
-            .toBe('A jumping jack or star jump, also called side-straddle hop is a physical jumping exercise.');
-      });
+    it('should load workout data', () => {
+        browser.waitForAngularEnabled(false);
+        const page = new WorkoutRunnerPage();
+        page.pauseResume.click();
+        expect(page.exerciseTitle).toBe('Jumping Jacks');
+        expect(page.exerciseDescription)
+          .toBe('A jumping jack or star jump, also called side-straddle hop is a physical jumping exercise.');
+    });
 
-      it('should pause workout when paused button clicked', () => {
-          const page = new WorkoutRunnerPage();
-          let timeRemaining;
-          browser.waitForAngularEnabled(false);
+    it('should pause workout when paused button clicked', () => {
+        const page = new WorkoutRunnerPage();
+        let timeRemaining;
+        browser.waitForAngularEnabled(false);
 
-          page.pauseResume.click();
-          expect(page.playButton.count()).toBe(1);
-          expect(page.pauseButton.count()).toBe(0);
+        page.pauseResume.click();
+        expect(page.playButton.count()).toBe(1);
+        expect(page.pauseButton.count()).toBe(0);
 
-          page.exerciseTimeRemaining.then((time) => {
-              timeRemaining = time;
-              browser.sleep(3000);
-          });
-          page.exerciseTimeRemaining.then((time) => {
-              expect(page.exerciseTimeRemaining).toBe(timeRemaining);
-          });
-      });
+        page.exerciseTimeRemaining.then((time) => {
+            timeRemaining = time;
+            browser.sleep(3000);
+        });
+        page.exerciseTimeRemaining.then((time) => {
+            expect(page.exerciseTimeRemaining).toBe(timeRemaining);
+        });
+    });
   });
 });

@@ -1,9 +1,9 @@
 import { inject, fakeAsync, async, tick, TestBed, discardPeriodicTasks } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { Router } from '@angular/router';
+import { of } from 'rxjs/observable/of';
 
 import { WorkoutPlan, ExercisePlan, Exercise } from '../core/model';
-import { of } from 'rxjs/observable/of';
 import { WorkoutRunnerComponent } from './workout-runner.component';
 import { SecondsToTimePipe } from '../shared/seconds-to-time.pipe';
 import { WorkoutService } from '../core/workout.service';
@@ -70,7 +70,7 @@ describe('Workout Runner', () => {
 
     it('should start the workout', () => {
         runner.workoutStarted.subscribe((w: any) => {
-            expect(w).toEqual(runner.workoutPlan);
+          expect(w).toEqual(runner.workoutPlan);
         });
         runner.ngOnInit();
         runner.ngDoCheck();
@@ -105,7 +105,6 @@ describe('Workout Runner', () => {
         tick(8000);
         expect(runner.exerciseRunningDuration).toBe(10);
         discardPeriodicTasks();
-        runner.ngOnDestroy();
     }));
 
     it('should decrease total workout duration with time', fakeAsync(() => {
@@ -117,7 +116,6 @@ describe('Workout Runner', () => {
         tick(1000);
         expect(runner.workoutTimeRemaining).toBe(runner.workoutPlan.totalWorkoutDuration() - 2);
         discardPeriodicTasks();
-        runner.ngOnDestroy();
     }));
 
     it('should transition to next exercise on one exercise complete', fakeAsync(() => {
@@ -127,7 +125,7 @@ describe('Workout Runner', () => {
         TestHelper.advanceWorkout(exerciseDuration);
         expect(runner.currentExercise.exercise.name).toBe('rest');
         expect(runner.currentExercise.duration).toBe(runner.workoutPlan.restBetweenExercise);
-        runner.ngOnDestroy();
+        discardPeriodicTasks();
     }));
 
     it('should not update workoutTimeRemaining for paused workout on interval lapse', fakeAsync(() => {
@@ -140,7 +138,7 @@ describe('Workout Runner', () => {
         expect(runner.workoutPaused).toBe(true);
         tick(1000);
         expect(runner.workoutTimeRemaining).toBe(runner.workoutPlan.totalWorkoutDuration() - 1);
-        runner.ngOnDestroy();
+        discardPeriodicTasks();
     }));
 
     it('should end the workout when all exercises are complete',
@@ -158,7 +156,7 @@ describe('Workout Runner', () => {
         expect(router.navigate).toHaveBeenCalledWith(['/finish']);
         expect(runner.workoutTimeRemaining).toBe(0);
         expect(runner.currentExercise).toBe(runner.workoutPlan.exercises[2]);
-        runner.ngOnDestroy();
+        discardPeriodicTasks();
     })));
 });
 

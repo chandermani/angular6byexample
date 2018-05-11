@@ -8,11 +8,9 @@ import { RemoteValidatorDirective } from './remote-validator.directive';
 @Component({
     template: `
       <form>
-      <input type="text" name="workoutName" #name="ngModel" class="form-control"
-      id="workout-name" placeholder="Enter workout name. Must be unique." [(ngModel)]="workoutName"
-      abeRemoteValidator="workoutname" [validateFunction]="validateWorkoutName"
-      [ngModelOptions]="{updateOn: 'blur'}"
-      abeBusyIndicator required>
+      <input type="text" name="workoutName"
+      id="workout-name" [(ngModel)]="workoutName"
+      abeRemoteValidator="workoutname" [validateFunction]="validateWorkoutName">
       </form>
     `
 })
@@ -43,11 +41,6 @@ describe('RemoteValidatorDirective', () => {
         debug = fixture.debugElement;
         input = debug.query(By.css('[name=workoutName]'));
     }));
-
-    it('should create an instance', () => {
-      const directive = new RemoteValidatorDirective();
-      expect(directive).toBeTruthy();
-    });
 
     it('should load the directive without error', fakeAsync(() =>  {
         expect(input.attributes.abeRemoteValidator).toBe('workoutname', 'remote validator directive should be loaded.');
