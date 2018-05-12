@@ -1,8 +1,11 @@
 import { ExercisePlan } from '../workout-runner/model';
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from './local-storage.service';
+import { CoreModule } from './core.module';
 
-@Injectable()
+@Injectable({
+  providedIn: CoreModule
+})
 export class WorkoutHistoryTrackerService {
   private maxHistoryItems = 20;   // We only track for last 20 exercise
   private currentWorkoutLog: WorkoutLogEntry = null;
