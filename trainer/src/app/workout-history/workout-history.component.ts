@@ -4,8 +4,7 @@ import { Location } from '@angular/common';
 
 @Component({
   selector: 'abe-workout-history',
-  templateUrl: './workout-history.component.html',
-  styleUrls: ['./workout-history.component.css']
+  templateUrl: './workout-history.component.html'
 })
 export class WorkoutHistoryComponent implements OnInit {
   history: Array<WorkoutLogEntry> = [];
