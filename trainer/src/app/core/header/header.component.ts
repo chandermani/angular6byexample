@@ -1,6 +1,8 @@
+
+import {filter} from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
-import 'rxjs/add/operator/filter';
+
 
 
 @Component({
@@ -12,8 +14,8 @@ export class HeaderComponent implements OnInit {
 
   private showHistoryLink = true;
   constructor(private router: Router) {
-    this.router.events
-      .filter(e => e instanceof NavigationEnd)
+    this.router.events.pipe(
+      filter(e => e instanceof NavigationEnd))
       .subscribe((e: NavigationEnd) => {
         this.showHistoryLink = !e.url.startsWith('/workout');
       });
