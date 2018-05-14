@@ -7,10 +7,10 @@
         <div class="row">
             <h2 class="col-sm-9">{{workout.title||'Workout Title'}} </h2>
          </div>
-         <form  #f="ngForm" name="formWorkout" (ngSubmit)="save(f.form)" class="row">
-             <div id="exercises-list" class="col-sm-2 exercise-list">
+         <form #f="ngForm" name="formWorkout" (ngSubmit)="save(f.form)" class="row">
+             <div id="exercises-list" class="col-sm-2 exercise-list" ngModelGroup="exercises">
                  <div *ngFor="let exercisePlan of workout.exercises; let i=index" class="exercise-item">
-                     <div class="exercise tile">
+                     <div class="exercise tile" [ngModelGroup]="i">
                          <div class="title">
                              {{exercisePlan.exercise.title}}
                              <span class="btn float-right trashcan" (click)="removeExercise(exercisePlan)"><span class="ion-ios-trash-outline"></span></span>

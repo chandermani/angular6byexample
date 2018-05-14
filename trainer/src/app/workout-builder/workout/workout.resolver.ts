@@ -10,9 +10,6 @@ import { WorkoutPlan } from '../../core/model';
 @Injectable()
 export class WorkoutResolver implements Resolve<WorkoutPlan> {
   public workout: WorkoutPlan;
-  private sub: any;
-  private submitted = false;
-  private removeTouched = false;
   private isExistingWorkout = false;
 
   constructor(

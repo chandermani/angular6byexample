@@ -6,9 +6,12 @@ import { of } from 'rxjs/observable/of';
 import { forkJoin } from 'rxjs/observable/forkJoin';
 import { map, catchError } from 'rxjs/operators';
 
-import { Exercise, ExercisePlan, WorkoutPlan } from './model';
+import {Exercise, ExercisePlan, WorkoutPlan } from './model';
+import { CoreModule } from './core.module';
 
-@Injectable()
+@Injectable({
+  providedIn: CoreModule
+})
 export class WorkoutService {
     workouts: Array<WorkoutPlan> = [];
     exercises: Array<Exercise> = [];

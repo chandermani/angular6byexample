@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ExercisePlan, WorkoutPlan } from '../../core/model';
+import { WorkoutPlan, ExercisePlan } from '../../core/model';
 import { WorkoutService } from '../../core/workout.service';
 
 
