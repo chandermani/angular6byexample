@@ -2,8 +2,11 @@ import {Injectable} from '@angular/core';
 import {ExercisePlan} from './model';
 import {WorkoutPlan} from './model';
 import {Exercise} from './model';
+import { CoreModule } from './core.module';
 
-@Injectable()
+@Injectable({
+  providedIn: CoreModule
+})
 export class WorkoutService {
     workouts: Array<WorkoutPlan> = [];
     exercises: Array<Exercise> = [];
