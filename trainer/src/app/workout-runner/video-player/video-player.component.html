@@ -1,0 +1,10 @@
+<div class="card">
+  <h4 class="card-header">Videos</h4>
+  <div class="card-body">
+    <div *ngFor="let video of videos" (click)="playVideo(video)" class="row">
+      <div class="col-sm-12 p-2">
+        <img class="video-image" [src]="'//i.ytimg.com/vi/'+video+'/hqdefault.jpg'" />
+      </div>
+    </div>
+  </div>
+</div>

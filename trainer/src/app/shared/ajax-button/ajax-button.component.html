@@ -1,0 +1,6 @@
+<button [attr.disabled]="busy" class="btn btn-primary">
+  <span [hidden]="!busy">
+    <ng-content select="[data-animator]"></ng-content>
+  </span>
+  <ng-content select="[data-content]"></ng-content>
+</button>
