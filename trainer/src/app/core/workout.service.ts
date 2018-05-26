@@ -26,7 +26,7 @@ export class WorkoutService {
     }
 
     getExercises() {
-        return this.http.get<ExercisePlan>(this.collectionsUrl + '/exercises' + this.params)
+        return this.http.get<Exercise[]>(this.collectionsUrl + '/exercises' + this.params)
             .pipe(catchError(WorkoutService.handleError));
     }
 
