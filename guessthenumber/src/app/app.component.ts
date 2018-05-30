@@ -24,7 +24,7 @@ import { Component } from '@angular/core';
     <p class="text-info">No of guesses :
       <span class="badge">{{noOfTries}}</span>
     </p>
-  </div>    
+  </div>
   `
 })
 export class AppComponent {
