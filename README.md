@@ -4,7 +4,7 @@
 
 This is the code repository for [Angular by Example](https://www.packtpub.com/web-development/angular-example-third-edition?utm_source=github&utm_medium=repository&utm_campaign=9781788835176), published by Packt.
 
-**Discover everything you need to build your own Angular 6 applications**
+**Get up and running with Angular by building modern real-world web apps**
 
 ## What is this book about?
 Angular helps you build faster, efficient, and flexible cross-platform applications. Creating complex and rich web applications, with a lighter resource footprint, has never been easier or faster. Angular is now at release 6, with significant changes compared to previous versions.
