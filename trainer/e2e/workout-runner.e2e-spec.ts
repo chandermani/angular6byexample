@@ -16,7 +16,7 @@ describe('Workout Runner', () => {
 
       it('should search workout with specific name.', () => {
           const filteredWorkouts = element.all(by.css('.workout.tile'));
-          expect(filteredWorkouts.count()).toEqual(5);
+          expect(filteredWorkouts.count()).toEqual(2);
 
           const searchInput = element(by.css('.form-control'));
           searchInput.sendKeys('1 Minute Workout');
