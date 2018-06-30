@@ -24,10 +24,10 @@ alt="https://www.packtpub.com/" border="5" /></a>
 
 
 ## Instructions and Navigations
-All of the code is organized into folders. For example, Chapter02.
+The code for the book is organized around **checkpoints**. We have created multiple checkpoints that map to GitHub branches such as `checkpoint2.1`, `checkpoint2.2`, and so on. During the narration, we will highlight the branch for reference. These branches will contain the work done on the app up until that point in time.
 
 The code will look like the following:
-```
+``` js
 "styles": [
    "node_modules/bootstrap/dist/css/bootstrap.min.css",
    "src/styles.css"
@@ -35,15 +35,15 @@ The code will look like the following:
 ```
 
 **Following is what you need for this book:**
-Angular by Example is an essential guide for beginners who want to get started with Angular. You’ll start building applications immediately with the featured examples and uncover a simpler approach to JavaScript web development. Prior experience with HTML, CSS, and JavaScript is necessary.
+Angular 6 by Example is an essential guide for beginners who want to get started with Angular. You’ll start building applications immediately with the featured examples and uncover a simpler approach to web development using TypeScript. Prior experience with HTML, CSS, and basic TypeScript is required.
 
-With the following software and hardware list you can run all code files present in the book (Chapter 1-10).
+The table below details the prerequisites required to run all code files present in the book (Chapter 1-8).
 
 ### Software and Hardware List
 
 | Chapter  | Software required                   | OS required                        |
 | -------- | ------------------------------------| -----------------------------------|
-| 1-8      | NodeJS, Postman                     | Windows, Mac, or Linux             |
+| 1-8      | Node, Angular CLI                     | Windows, Mac, or Linux             |
 
 
 
