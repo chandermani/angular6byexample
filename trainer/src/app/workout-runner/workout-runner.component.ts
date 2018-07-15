@@ -6,7 +6,7 @@ import { WorkoutHistoryTrackerService } from '../core/workout-history-tracker.se
 @Component({
   selector: 'abe-workout-runner',
   templateUrl: './workout-runner.component.html',
-  styles:[]
+  styles: []
 })
 export class WorkoutRunnerComponent implements OnInit, OnDestroy {
   workoutPlan: WorkoutPlan;
@@ -23,6 +23,7 @@ export class WorkoutRunnerComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    if (this.exerciseTrackingInterval) { clearInterval(this.exerciseTrackingInterval); }
     this.tracker.endTracking(false);
   }
 
