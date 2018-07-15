@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { DialogRef, ModalComponent, CloseGuard } from 'ngx-modialog';
-import { BSModalContext } from 'ngx-modialog/plugins/bootstrap';
+import { BSModalContext, bootstrap4Mode } from 'ngx-modialog/plugins/bootstrap';
+bootstrap4Mode();
 
 export class VideoDialogContext extends BSModalContext {
   constructor(public videoId: string) {
