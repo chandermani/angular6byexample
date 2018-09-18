@@ -1,6 +1,6 @@
 # Angular 6 by Example - Third Edition
 
-<a href="https://www.packtpub.com/web-development/angular-example-third-edition?utm_source=github&utm_medium=repository&utm_campaign=9781788835176"><img src="https://d255esdrn735hr.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/B09551_cover.png" alt="	Angular by Example" height="256px" align="right"></a>
+<a href="https://www.packtpub.com/web-development/angular-example-third-edition?utm_source=github&utm_medium=repository&utm_campaign=9781788835176"><img src="https://www.packtpub.com/sites/default/files/B09551_cover.png" alt="	Angular by Example" height="256px" align="right"></a>
 
 This is the code repository for [Angular 6 by Example](https://www.packtpub.com/web-development/angular-example-third-edition?utm_source=github&utm_medium=repository&utm_campaign=9781788835176), published by Packt.
 
